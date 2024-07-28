@@ -1,0 +1,893 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.4.553">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>deber07_leandro_bravo</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="Deber07_Leandro_Bravo_files/libs/clipboard/clipboard.min.js"></script>
+<script src="Deber07_Leandro_Bravo_files/libs/quarto-html/quarto.js"></script>
+<script src="Deber07_Leandro_Bravo_files/libs/quarto-html/popper.min.js"></script>
+<script src="Deber07_Leandro_Bravo_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="Deber07_Leandro_Bravo_files/libs/quarto-html/anchor.min.js"></script>
+<link href="Deber07_Leandro_Bravo_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="Deber07_Leandro_Bravo_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="Deber07_Leandro_Bravo_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="Deber07_Leandro_Bravo_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="Deber07_Leandro_Bravo_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+</head>
+
+<body class="fullcontent">
+
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+
+<main class="content" id="quarto-document-content">
+
+
+
+
+<p style="text-align: right;">
+<img src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQWwhLsJ3D-RF2wSL1w2Zl8z6DYSAs4vcqmQxYnELC0rwxX06HJ" alt="Logo EPN" width="100" height="100" style="float: right;">
+</p><center>
+<span style="font-size: 26px; font-weight: bold;">ESCUELA POLITÉCNICA NACIONAL</span>
+</center>
+<center>
+<span style="font-size: 26px; font-weight: bold;">MÉTODOS NUMÉRICOS</span>
+</center>
+<h3 style="font-size: 20px;" class="anchored">
+<span style="float:left">Leandro Bravo</span> <span style="float:right">GR1CC</span>
+</h3>
+<br>
+<h3 style="font-size: 16px;" class="anchored">
+<span style="float:left">CONJUNTO DE EJERCICIOS</span>
+</h3>
+<section id="frontera-natural" class="level1">
+<h1>Frontera natural</h1>
+<div id="1ff9246e-0f27-46ee-8705-ba81910d9dbf" class="cell" data-tags="[]" data-execution_count="410">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> sympy <span class="im">as</span> sym</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> IPython.display <span class="im">import</span> display</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> cubic_spline(xs: <span class="bu">list</span>[<span class="bu">float</span>], ys: <span class="bu">list</span>[<span class="bu">float</span>]) <span class="op">-&gt;</span> <span class="bu">list</span>[sym.Symbol]:</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>    points <span class="op">=</span> <span class="bu">sorted</span>(<span class="bu">zip</span>(xs, ys), key<span class="op">=</span><span class="kw">lambda</span> x: x[<span class="dv">0</span>]) <span class="co">#ordenar puntos por x</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>    xs <span class="op">=</span> [x <span class="cf">for</span> x, _ <span class="kw">in</span> points]</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>    ys <span class="op">=</span> [y <span class="cf">for</span> _, y <span class="kw">in</span> points]</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>    n <span class="op">=</span> <span class="bu">len</span>(points) <span class="op">-</span> <span class="dv">1</span>  <span class="co">#Número de splines</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>    h <span class="op">=</span> [xs[i <span class="op">+</span> <span class="dv">1</span>] <span class="op">-</span> xs[i] <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(n)] <span class="co">#distancias entre xs contiguas</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>    alpha <span class="op">=</span> [<span class="dv">0</span>] <span class="op">*</span> (n <span class="op">+</span> <span class="dv">1</span>)</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1</span>, n):</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>        alpha[i] <span class="op">=</span> <span class="dv">3</span> <span class="op">/</span> h[i]<span class="op">*</span>(ys[i<span class="op">+</span><span class="dv">1</span>] <span class="op">-</span> ys[i])<span class="op">-</span><span class="dv">3</span> <span class="op">/</span> h[i<span class="op">-</span><span class="dv">1</span>]<span class="op">*</span>(ys[i] <span class="op">-</span> ys[i<span class="op">-</span><span class="dv">1</span>])</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>    l <span class="op">=</span> [<span class="dv">1</span>]</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>    u <span class="op">=</span> [<span class="dv">0</span>]</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>    z <span class="op">=</span> [<span class="dv">0</span>]</span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1</span>, n):</span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>        l.append(<span class="dv">2</span> <span class="op">*</span> (xs[i <span class="op">+</span> <span class="dv">1</span>] <span class="op">-</span> xs[i <span class="op">-</span> <span class="dv">1</span>]) <span class="op">-</span> h[i <span class="op">-</span> <span class="dv">1</span>] <span class="op">*</span> u[i <span class="op">-</span> <span class="dv">1</span>])</span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>        u.append(h[i] <span class="op">/</span> l[i])</span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>        z.append((alpha[i] <span class="op">-</span> h[i <span class="op">-</span> <span class="dv">1</span>] <span class="op">*</span> z[i <span class="op">-</span> <span class="dv">1</span>]) <span class="op">/</span> l[i])</span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>    l.append(<span class="dv">1</span>)</span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>    z.append(<span class="dv">0</span>)</span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>    c <span class="op">=</span> [<span class="dv">0</span>] <span class="op">*</span> (n <span class="op">+</span> <span class="dv">1</span>)</span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>    b <span class="op">=</span> [<span class="dv">0</span>] <span class="op">*</span> n</span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>    d <span class="op">=</span> [<span class="dv">0</span>] <span class="op">*</span> n</span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>    a <span class="op">=</span> [<span class="dv">0</span>] <span class="op">*</span> n</span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>    x <span class="op">=</span> sym.Symbol(<span class="st">"x"</span>)</span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a>    splines <span class="op">=</span> []</span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> j <span class="kw">in</span> <span class="bu">range</span>(n <span class="op">-</span> <span class="dv">1</span>, <span class="op">-</span><span class="dv">1</span>, <span class="op">-</span><span class="dv">1</span>):</span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a>        c[j] <span class="op">=</span> z[j] <span class="op">-</span> u[j] <span class="op">*</span> c[j <span class="op">+</span> <span class="dv">1</span>]</span>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a>        b[j] <span class="op">=</span> (ys[j <span class="op">+</span> <span class="dv">1</span>] <span class="op">-</span> ys[j]) <span class="op">/</span> h[j] <span class="op">-</span> h[j] <span class="op">*</span> (c[j <span class="op">+</span> <span class="dv">1</span>] <span class="op">+</span> <span class="dv">2</span> <span class="op">*</span> c[j]) <span class="op">/</span> <span class="dv">3</span></span>
+<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a>        d[j] <span class="op">=</span> (c[j <span class="op">+</span> <span class="dv">1</span>] <span class="op">-</span> c[j]) <span class="op">/</span> (<span class="dv">3</span> <span class="op">*</span> h[j])</span>
+<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a>        a[j] <span class="op">=</span> ys[j]</span>
+<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a>        S <span class="op">=</span> a[j] <span class="op">+</span> b[j]<span class="op">*</span>(x <span class="op">-</span> xs[j]) <span class="op">+</span> c[j]<span class="op">*</span>(x <span class="op">-</span> xs[j])<span class="op">**</span><span class="dv">2</span> <span class="op">+</span> d[j]<span class="op">*</span>(x <span class="op">-</span> xs[j])<span class="op">**</span><span class="dv">3</span></span>
+<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a>        splines.append(S)</span>
+<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a>    splines.reverse()</span>
+<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> splines</span>
+<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a>    points <span class="op">=</span> <span class="bu">sorted</span>(<span class="bu">zip</span>(xs, ys), key<span class="op">=</span><span class="kw">lambda</span> x: x[<span class="dv">0</span>])  <span class="co">#ordenar puntos por x</span></span>
+<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a>    xs <span class="op">=</span> [x <span class="cf">for</span> x, _ <span class="kw">in</span> points]</span>
+<span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a>    ys <span class="op">=</span> [y <span class="cf">for</span> _, y <span class="kw">in</span> points]</span>
+<span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a>    n <span class="op">=</span> <span class="bu">len</span>(points) <span class="op">-</span> <span class="dv">1</span>  <span class="co">#Número de splines</span></span>
+<span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a>    h <span class="op">=</span> [xs[i <span class="op">+</span> <span class="dv">1</span>] <span class="op">-</span> xs[i] <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(n)] <span class="co">#distancias entre xs contiguas</span></span>
+<span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a>    alpha <span class="op">=</span> [<span class="dv">0</span>] <span class="op">*</span> (n <span class="op">+</span> <span class="dv">1</span>)</span>
+<span id="cb1-48"><a href="#cb1-48" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1</span>, n):</span>
+<span id="cb1-49"><a href="#cb1-49" aria-hidden="true" tabindex="-1"></a>        alpha[i] <span class="op">=</span> <span class="dv">3</span> <span class="op">/</span> h[i]<span class="op">*</span>(ys[i<span class="op">+</span><span class="dv">1</span>]<span class="op">-</span>ys[i])<span class="op">-</span><span class="dv">3</span> <span class="op">/</span> h[i<span class="op">-</span><span class="dv">1</span>]<span class="op">*</span>(ys[i]<span class="op">-</span>ys[i<span class="op">-</span><span class="dv">1</span>])</span>
+<span id="cb1-50"><a href="#cb1-50" aria-hidden="true" tabindex="-1"></a>    l <span class="op">=</span> [<span class="dv">1</span>]</span>
+<span id="cb1-51"><a href="#cb1-51" aria-hidden="true" tabindex="-1"></a>    u <span class="op">=</span> [<span class="dv">0</span>]</span>
+<span id="cb1-52"><a href="#cb1-52" aria-hidden="true" tabindex="-1"></a>    z <span class="op">=</span> [<span class="dv">0</span>]</span>
+<span id="cb1-53"><a href="#cb1-53" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1</span>, n):</span>
+<span id="cb1-54"><a href="#cb1-54" aria-hidden="true" tabindex="-1"></a>        l <span class="op">+=</span> [<span class="dv">2</span> <span class="op">*</span> (xs[i <span class="op">+</span> <span class="dv">1</span>] <span class="op">-</span> xs[i <span class="op">-</span> <span class="dv">1</span>]) <span class="op">-</span> h[i <span class="op">-</span> <span class="dv">1</span>] <span class="op">*</span> u[i <span class="op">-</span> <span class="dv">1</span>]]</span>
+<span id="cb1-55"><a href="#cb1-55" aria-hidden="true" tabindex="-1"></a>        u <span class="op">+=</span> [h[i] <span class="op">/</span> l[i]]</span>
+<span id="cb1-56"><a href="#cb1-56" aria-hidden="true" tabindex="-1"></a>        z <span class="op">+=</span> [(alpha[i] <span class="op">-</span> h[i <span class="op">-</span> <span class="dv">1</span>] <span class="op">*</span> z[i <span class="op">-</span> <span class="dv">1</span>]) <span class="op">/</span> l[i]] </span>
+<span id="cb1-57"><a href="#cb1-57" aria-hidden="true" tabindex="-1"></a>    l.append(<span class="dv">1</span>)</span>
+<span id="cb1-58"><a href="#cb1-58" aria-hidden="true" tabindex="-1"></a>    z.append(<span class="dv">0</span>)</span>
+<span id="cb1-59"><a href="#cb1-59" aria-hidden="true" tabindex="-1"></a>    c <span class="op">=</span> [<span class="dv">0</span>] <span class="op">*</span> (n <span class="op">+</span> <span class="dv">1</span>)</span>
+<span id="cb1-60"><a href="#cb1-60" aria-hidden="true" tabindex="-1"></a>    x <span class="op">=</span> sym.Symbol(<span class="st">"x"</span>)</span>
+<span id="cb1-61"><a href="#cb1-61" aria-hidden="true" tabindex="-1"></a>    splines <span class="op">=</span> []</span>
+<span id="cb1-62"><a href="#cb1-62" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> j <span class="kw">in</span> <span class="bu">range</span>(n <span class="op">-</span> <span class="dv">1</span>, <span class="op">-</span><span class="dv">1</span>, <span class="op">-</span><span class="dv">1</span>):</span>
+<span id="cb1-63"><a href="#cb1-63" aria-hidden="true" tabindex="-1"></a>        c[j] <span class="op">=</span> z[j] <span class="op">-</span> u[j] <span class="op">*</span> c[j <span class="op">+</span> <span class="dv">1</span>]</span>
+<span id="cb1-64"><a href="#cb1-64" aria-hidden="true" tabindex="-1"></a>        b <span class="op">=</span> (ys[j <span class="op">+</span> <span class="dv">1</span>] <span class="op">-</span> ys[j]) <span class="op">/</span> h[j] <span class="op">-</span> h[j] <span class="op">*</span> (c[j <span class="op">+</span> <span class="dv">1</span>] <span class="op">+</span> <span class="dv">2</span> <span class="op">*</span> c[j]) <span class="op">/</span> <span class="dv">3</span></span>
+<span id="cb1-65"><a href="#cb1-65" aria-hidden="true" tabindex="-1"></a>        d <span class="op">=</span> (c[j <span class="op">+</span> <span class="dv">1</span>] <span class="op">-</span> c[j]) <span class="op">/</span> (<span class="dv">3</span> <span class="op">*</span> h[j])</span>
+<span id="cb1-66"><a href="#cb1-66" aria-hidden="true" tabindex="-1"></a>        a <span class="op">=</span> ys[j] </span>
+<span id="cb1-67"><a href="#cb1-67" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(j, a, b, c[j], d)</span>
+<span id="cb1-68"><a href="#cb1-68" aria-hidden="true" tabindex="-1"></a>        S <span class="op">=</span> a <span class="op">+</span> b<span class="op">*</span>(x <span class="op">-</span> xs[j]) <span class="op">+</span> c[j]<span class="op">*</span>(x <span class="op">-</span> xs[j])<span class="op">**</span><span class="dv">2</span> <span class="op">+</span> d<span class="op">*</span>(x <span class="op">-</span> xs[j])<span class="op">**</span><span class="dv">3</span></span>
+<span id="cb1-69"><a href="#cb1-69" aria-hidden="true" tabindex="-1"></a>        splines.append(S)</span>
+<span id="cb1-70"><a href="#cb1-70" aria-hidden="true" tabindex="-1"></a>    splines.reverse()</span>
+<span id="cb1-71"><a href="#cb1-71" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> splines</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="frontera-condicionada" class="level1">
+<h1>Frontera condicionada</h1>
+<div id="fdd2e9cf-acb9-45b5-89e6-afdcc8b5e4c4" class="cell" data-tags="[]" data-execution_count="413">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> sympy <span class="im">as</span> sym</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> cubic_spline_clamped(xs: <span class="bu">list</span>[<span class="bu">float</span>], ys: <span class="bu">list</span>[<span class="bu">float</span>],</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>                         d0: <span class="bu">float</span>, dn: <span class="bu">float</span>)<span class="op">-&gt;</span><span class="bu">list</span>[sym.Symbol]:</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>    points <span class="op">=</span> <span class="bu">sorted</span>(<span class="bu">zip</span>(xs, ys), key<span class="op">=</span><span class="kw">lambda</span> x: x[<span class="dv">0</span>]) <span class="co">#ordenar puntos por x</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>    xs <span class="op">=</span> [x <span class="cf">for</span> x, _ <span class="kw">in</span> points]</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>    ys <span class="op">=</span> [y <span class="cf">for</span> _, y <span class="kw">in</span> points]</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>    n <span class="op">=</span> <span class="bu">len</span>(points) <span class="op">-</span> <span class="dv">1</span> <span class="co">#Número de splines</span></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>    h <span class="op">=</span> [xs[i <span class="op">+</span> <span class="dv">1</span>] <span class="op">-</span> xs[i] <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(n)] <span class="co">#distancias entre xs contiguas</span></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>    alpha <span class="op">=</span> [<span class="dv">0</span>] <span class="op">*</span> (n <span class="op">+</span> <span class="dv">1</span>)</span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>    alpha[<span class="dv">0</span>] <span class="op">=</span> <span class="dv">3</span> <span class="op">/</span> h[<span class="dv">0</span>] <span class="op">*</span> (ys[<span class="dv">1</span>] <span class="op">-</span> ys[<span class="dv">0</span>]) <span class="op">-</span> <span class="dv">3</span> <span class="op">*</span> d0</span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>    alpha[<span class="op">-</span><span class="dv">1</span>] <span class="op">=</span> <span class="dv">3</span> <span class="op">*</span> dn <span class="op">-</span> <span class="dv">3</span> <span class="op">/</span> h[n <span class="op">-</span> <span class="dv">1</span>] <span class="op">*</span> (ys[n] <span class="op">-</span> ys[n <span class="op">-</span> <span class="dv">1</span>])</span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1</span>, n):</span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>        alpha[i] <span class="op">=</span> <span class="dv">3</span> <span class="op">/</span> h[i]<span class="op">*</span>(ys[i<span class="op">+</span><span class="dv">1</span>]<span class="op">-</span>ys[i])<span class="op">-</span><span class="dv">3</span> <span class="op">/</span> h[i<span class="op">-</span><span class="dv">1</span>]<span class="op">*</span>(ys[i]<span class="op">-</span>ys[i<span class="op">-</span><span class="dv">1</span>])</span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>    l <span class="op">=</span> [<span class="dv">2</span> <span class="op">*</span> h[<span class="dv">0</span>]]</span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>    u <span class="op">=</span> [<span class="fl">0.5</span>]</span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>    z <span class="op">=</span> [alpha[<span class="dv">0</span>] <span class="op">/</span> l[<span class="dv">0</span>]]</span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1</span>, n):</span>
+<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a>        l.append(<span class="dv">2</span> <span class="op">*</span> (xs[i <span class="op">+</span> <span class="dv">1</span>] <span class="op">-</span> xs[i <span class="op">-</span> <span class="dv">1</span>]) <span class="op">-</span> h[i <span class="op">-</span> <span class="dv">1</span>] <span class="op">*</span> u[i <span class="op">-</span> <span class="dv">1</span>])</span>
+<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a>        u.append(h[i] <span class="op">/</span> l[i])</span>
+<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a>        z.append((alpha[i] <span class="op">-</span> h[i <span class="op">-</span> <span class="dv">1</span>] <span class="op">*</span> z[i <span class="op">-</span> <span class="dv">1</span>]) <span class="op">/</span> l[i])</span>
+<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a>    l.append(h[n <span class="op">-</span> <span class="dv">1</span>] <span class="op">*</span> (<span class="dv">2</span> <span class="op">-</span> u[n <span class="op">-</span> <span class="dv">1</span>]))</span>
+<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a>    z.append((alpha[n] <span class="op">-</span> h[n <span class="op">-</span> <span class="dv">1</span>] <span class="op">*</span> z[n <span class="op">-</span> <span class="dv">1</span>]) <span class="op">/</span> l[n])</span>
+<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a>    c <span class="op">=</span> [<span class="dv">0</span>] <span class="op">*</span> (n <span class="op">+</span> <span class="dv">1</span>)</span>
+<span id="cb2-29"><a href="#cb2-29" aria-hidden="true" tabindex="-1"></a>    b <span class="op">=</span> [<span class="dv">0</span>] <span class="op">*</span> n</span>
+<span id="cb2-30"><a href="#cb2-30" aria-hidden="true" tabindex="-1"></a>    d <span class="op">=</span> [<span class="dv">0</span>] <span class="op">*</span> n</span>
+<span id="cb2-31"><a href="#cb2-31" aria-hidden="true" tabindex="-1"></a>    a <span class="op">=</span> [<span class="dv">0</span>] <span class="op">*</span> n</span>
+<span id="cb2-32"><a href="#cb2-32" aria-hidden="true" tabindex="-1"></a>    x <span class="op">=</span> sym.Symbol(<span class="st">"x"</span>)</span>
+<span id="cb2-33"><a href="#cb2-33" aria-hidden="true" tabindex="-1"></a>    splines <span class="op">=</span> []</span>
+<span id="cb2-34"><a href="#cb2-34" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> j <span class="kw">in</span> <span class="bu">range</span>(n <span class="op">-</span> <span class="dv">1</span>, <span class="op">-</span><span class="dv">1</span>, <span class="op">-</span><span class="dv">1</span>):</span>
+<span id="cb2-35"><a href="#cb2-35" aria-hidden="true" tabindex="-1"></a>        c[j] <span class="op">=</span> z[j] <span class="op">-</span> u[j] <span class="op">*</span> c[j <span class="op">+</span> <span class="dv">1</span>]</span>
+<span id="cb2-36"><a href="#cb2-36" aria-hidden="true" tabindex="-1"></a>        b[j] <span class="op">=</span> (ys[j <span class="op">+</span> <span class="dv">1</span>] <span class="op">-</span> ys[j]) <span class="op">/</span> h[j] <span class="op">-</span> h[j]<span class="op">*</span>(c[j <span class="op">+</span> <span class="dv">1</span>] <span class="op">+</span> <span class="dv">2</span> <span class="op">*</span>c[j]) <span class="op">/</span> <span class="dv">3</span></span>
+<span id="cb2-37"><a href="#cb2-37" aria-hidden="true" tabindex="-1"></a>        d[j] <span class="op">=</span> (c[j <span class="op">+</span> <span class="dv">1</span>] <span class="op">-</span> c[j]) <span class="op">/</span> (<span class="dv">3</span><span class="op">*</span>h[j])</span>
+<span id="cb2-38"><a href="#cb2-38" aria-hidden="true" tabindex="-1"></a>        a[j] <span class="op">=</span> ys[j]</span>
+<span id="cb2-39"><a href="#cb2-39" aria-hidden="true" tabindex="-1"></a>        S <span class="op">=</span> a[j] <span class="op">+</span> b[j]<span class="op">*</span>(x<span class="op">-</span>xs[j]) <span class="op">+</span> c[j]<span class="op">*</span>(x <span class="op">-</span> xs[j])<span class="op">**</span><span class="dv">2</span> <span class="op">+</span> d[j]<span class="op">*</span>(x <span class="op">-</span> xs[j])<span class="op">**</span><span class="dv">3</span></span>
+<span id="cb2-40"><a href="#cb2-40" aria-hidden="true" tabindex="-1"></a>        splines.append(S)</span>
+<span id="cb2-41"><a href="#cb2-41" aria-hidden="true" tabindex="-1"></a>    splines.reverse()</span>
+<span id="cb2-42"><a href="#cb2-42" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> splines</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<hr>
+<ol type="1">
+<li>Dados los puntos <span class="math inline">\((0,1)\)</span>, <span class="math inline">\((1,5)\)</span>, <span class="math inline">\((2,3)\)</span>, determine el spline cúbico.</li>
+</ol>
+<div id="c3fd5d4c-0740-4972-81ff-b7479823098c" class="cell" data-tags="[]" data-execution_count="417">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>xs <span class="op">=</span> [<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">2</span>]</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>ys <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">5</span>, <span class="dv">3</span>]</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>splines <span class="op">=</span> cubic_spline(xs<span class="op">=</span>xs, ys<span class="op">=</span>ys)</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>_ <span class="op">=</span> [display(s) <span class="cf">for</span> s <span class="kw">in</span> splines]</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"______"</span>)</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>_ <span class="op">=</span> [display(s.expand()) <span class="cf">for</span> s <span class="kw">in</span> splines]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display cell-output-markdown">
+<p><span class="math inline">\(\displaystyle - 1.5 x^{3} + 5.5 x + 1\)</span></p>
+</div>
+<div class="cell-output cell-output-display cell-output-markdown">
+<p><span class="math inline">\(\displaystyle 1.0 x + 1.5 \left(x - 1\right)^{3} - 4.5 \left(x - 1\right)^{2} + 4.0\)</span></p>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>______</code></pre>
+</div>
+<div class="cell-output cell-output-display cell-output-markdown">
+<p><span class="math inline">\(\displaystyle - 1.5 x^{3} + 5.5 x + 1\)</span></p>
+</div>
+<div class="cell-output cell-output-display cell-output-markdown">
+<p><span class="math inline">\(\displaystyle 1.5 x^{3} - 9.0 x^{2} + 14.5 x - 2.0\)</span></p>
+</div>
+</div>
+<ol start="2" type="1">
+<li>Dados los puntos <span class="math inline">\((-1,1)\)</span>, <span class="math inline">\((1,3)\)</span>, determine el spline cúbico sabiendo que <span class="math inline">\(f'(x_0) = 1\)</span>, <span class="math inline">\(f'(x_n) = 2\)</span>.</li>
+</ol>
+<div id="5d1fb4ee-5dc7-46a3-b445-693f357c6c58" class="cell" data-tags="[]" data-execution_count="420">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>xs <span class="op">=</span> [<span class="op">-</span><span class="dv">1</span>, <span class="dv">1</span>]</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>ys <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">3</span>]</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>d0 <span class="op">=</span> <span class="dv">1</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>dn <span class="op">=</span> <span class="dv">2</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>splines <span class="op">=</span> cubic_spline_clamped(xs<span class="op">=</span>xs, ys<span class="op">=</span>ys, d0<span class="op">=</span>d0, dn<span class="op">=</span>dn)</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>_ <span class="op">=</span> [display(s) <span class="cf">for</span> s <span class="kw">in</span> splines]</span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"______"</span>)</span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>_ <span class="op">=</span> [display(s.expand()) <span class="cf">for</span> s <span class="kw">in</span> splines]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display cell-output-markdown">
+<p><span class="math inline">\(\displaystyle 1.0 x + 2.0\)</span></p>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>______</code></pre>
+</div>
+<div class="cell-output cell-output-display cell-output-markdown">
+<p><span class="math inline">\(\displaystyle 1.0 x + 2.0\)</span></p>
+</div>
+</div>
+<ol start="3" type="1">
+<li>Usando la función anterior, encuentre el spline cúbico para: <span class="math inline">\(xs = [1, 2, 3]\)</span>, <span class="math inline">\(ys = [2, 3, 5]\)</span>.</li>
+</ol>
+<div id="5351d2a4-86dc-4491-a23a-1b2b3a02c4ef" class="cell" data-tags="[]" data-execution_count="423">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>xs <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>]</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>ys <span class="op">=</span> [<span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">5</span>]</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>splines <span class="op">=</span> cubic_spline(xs<span class="op">=</span>xs, ys<span class="op">=</span>ys)</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>_ <span class="op">=</span> [display(s) <span class="cf">for</span> s <span class="kw">in</span> splines]</span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"______"</span>)</span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>_ <span class="op">=</span> [display(s.expand()) <span class="cf">for</span> s <span class="kw">in</span> splines]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display cell-output-markdown">
+<p><span class="math inline">\(\displaystyle 0.75 x + 0.25 \left(x - 1\right)^{3} + 1.25\)</span></p>
+</div>
+<div class="cell-output cell-output-display cell-output-markdown">
+<p><span class="math inline">\(\displaystyle 1.5 x - 0.25 \left(x - 2\right)^{3} + 0.75 \left(x - 2\right)^{2}\)</span></p>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>______</code></pre>
+</div>
+<div class="cell-output cell-output-display cell-output-markdown">
+<p><span class="math inline">\(\displaystyle 0.25 x^{3} - 0.75 x^{2} + 1.5 x + 1.0\)</span></p>
+</div>
+<div class="cell-output cell-output-display cell-output-markdown">
+<p><span class="math inline">\(\displaystyle - 0.25 x^{3} + 2.25 x^{2} - 4.5 x + 5.0\)</span></p>
+</div>
+</div>
+<ol start="4" type="1">
+<li>Usando la función anterior, encuentre el spline cúbico para: <span class="math inline">\(xs = [0, 1, 2, 3]\)</span>, <span class="math inline">\(ys = [-1 ,1, 5, 2]\)</span>.</li>
+</ol>
+<div id="c9d71690-529f-4610-aa48-350bd4a22bba" class="cell" data-tags="[]" data-execution_count="426">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>xs <span class="op">=</span> [<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>]</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>ys <span class="op">=</span> [<span class="op">-</span><span class="dv">1</span> ,<span class="dv">1</span>, <span class="dv">5</span>, <span class="dv">2</span>]</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>splines <span class="op">=</span> cubic_spline(xs<span class="op">=</span>xs, ys<span class="op">=</span>ys)</span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>_ <span class="op">=</span> [display(s) <span class="cf">for</span> s <span class="kw">in</span> splines]</span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"______"</span>)</span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>_ <span class="op">=</span> [display(s.expand()) <span class="cf">for</span> s <span class="kw">in</span> splines]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display cell-output-markdown">
+<p><span class="math inline">\(\displaystyle 1.0 x^{3} + 1.0 x - 1\)</span></p>
+</div>
+<div class="cell-output cell-output-display cell-output-markdown">
+<p><span class="math inline">\(\displaystyle 4.0 x - 3.0 \left(x - 1\right)^{3} + 3.0 \left(x - 1\right)^{2} - 3.0\)</span></p>
+</div>
+<div class="cell-output cell-output-display cell-output-markdown">
+<p><span class="math inline">\(\displaystyle 1.0 x + 2.0 \left(x - 2\right)^{3} - 6.0 \left(x - 2\right)^{2} + 3.0\)</span></p>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>______</code></pre>
+</div>
+<div class="cell-output cell-output-display cell-output-markdown">
+<p><span class="math inline">\(\displaystyle 1.0 x^{3} + 1.0 x - 1\)</span></p>
+</div>
+<div class="cell-output cell-output-display cell-output-markdown">
+<p><span class="math inline">\(\displaystyle - 3.0 x^{3} + 12.0 x^{2} - 11.0 x + 3.0\)</span></p>
+</div>
+<div class="cell-output cell-output-display cell-output-markdown">
+<p><span class="math inline">\(\displaystyle 2.0 x^{3} - 18.0 x^{2} + 49.0 x - 37.0\)</span></p>
+</div>
+</div>
+<ol start="5" type="1">
+<li>Use la función cubic_spline_clamped, provista en el enlace de Github, para graficar los datos de la siguiente tabla.<br>
+<img src="Deber07_Leandro_Bravo_files/figure-html/8363b7c8-8410-40af-aeb8-23260d3b2646-1-cfb6d319-3474-44aa-a1c6-7d85e18c8fad.png" class="img-fluid" alt="image.png"></li>
+</ol>
+<div id="7ce2acda-4c58-43b4-bc39-53706f5c289e" class="cell" data-tags="[]" data-execution_count="428">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Curva 1</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> sympy <span class="im">as</span> sym</span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Definir los puntos a interpolar y las derivadas en el primer y último punto</span></span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>xs <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">5</span>, <span class="dv">6</span>, <span class="dv">7</span>, <span class="dv">8</span>, <span class="dv">10</span>, <span class="dv">13</span>, <span class="dv">17</span>]  </span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a>ys <span class="op">=</span> [<span class="dv">3</span>, <span class="fl">3.7</span>, <span class="fl">3.9</span>, <span class="fl">4.2</span>, <span class="fl">5.7</span>, <span class="fl">6.6</span>, <span class="fl">7.1</span>, <span class="fl">6.7</span>, <span class="fl">4.5</span>] </span>
+<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a>d0 <span class="op">=</span> <span class="dv">1</span> </span>
+<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a>dn <span class="op">=</span> <span class="op">-</span><span class="fl">0.67</span> </span>
+<span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-12"><a href="#cb11-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Definir x como una variable simbólica</span></span>
+<span id="cb11-13"><a href="#cb11-13" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> sym.Symbol(<span class="st">'x'</span>)</span>
+<span id="cb11-14"><a href="#cb11-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-15"><a href="#cb11-15" aria-hidden="true" tabindex="-1"></a><span class="co"># Llamar a la función cubic_spline_clamped</span></span>
+<span id="cb11-16"><a href="#cb11-16" aria-hidden="true" tabindex="-1"></a>splines <span class="op">=</span> cubic_spline_clamped(xs, ys, d0, dn)</span>
+<span id="cb11-17"><a href="#cb11-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-18"><a href="#cb11-18" aria-hidden="true" tabindex="-1"></a><span class="co"># Crear una gráfica para cada spline</span></span>
+<span id="cb11-19"><a href="#cb11-19" aria-hidden="true" tabindex="-1"></a>x_vals <span class="op">=</span> np.linspace(<span class="bu">min</span>(xs), <span class="bu">max</span>(xs), <span class="dv">1000</span>)</span>
+<span id="cb11-20"><a href="#cb11-20" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i, spline <span class="kw">in</span> <span class="bu">enumerate</span>(splines):</span>
+<span id="cb11-21"><a href="#cb11-21" aria-hidden="true" tabindex="-1"></a>    y_vals <span class="op">=</span> [spline.subs(x, val) <span class="cf">for</span> val <span class="kw">in</span> x_vals]</span>
+<span id="cb11-22"><a href="#cb11-22" aria-hidden="true" tabindex="-1"></a>    plt.plot(x_vals, y_vals, label<span class="op">=</span><span class="ss">f'Spline </span><span class="sc">{</span>i<span class="op">+</span><span class="dv">1</span><span class="sc">}</span><span class="ss">'</span>)</span>
+<span id="cb11-23"><a href="#cb11-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-24"><a href="#cb11-24" aria-hidden="true" tabindex="-1"></a><span class="co"># Mostrar la gráfica</span></span>
+<span id="cb11-25"><a href="#cb11-25" aria-hidden="true" tabindex="-1"></a>plt.scatter(xs, ys, color<span class="op">=</span><span class="st">'red'</span>)</span>
+<span id="cb11-26"><a href="#cb11-26" aria-hidden="true" tabindex="-1"></a>plt.ylim(<span class="bu">min</span>(ys)<span class="op">-</span><span class="dv">1</span>, <span class="bu">max</span>(ys)<span class="op">+</span><span class="dv">1</span>)</span>
+<span id="cb11-27"><a href="#cb11-27" aria-hidden="true" tabindex="-1"></a>plt.legend()</span>
+<span id="cb11-28"><a href="#cb11-28" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="Deber07_Leandro_Bravo_files/figure-html/cell-8-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<div id="65eb74ce-d8d5-40c1-bf12-30af8629b0f5" class="cell" data-tags="[]" data-execution_count="429">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Curva 2</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> sympy <span class="im">as</span> sym</span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Definir los puntos a interpolar y las derivadas en el primer y último punto</span></span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>xs <span class="op">=</span> [<span class="dv">17</span>, <span class="dv">20</span>, <span class="dv">23</span>, <span class="dv">24</span>, <span class="dv">25</span>, <span class="dv">27</span>, <span class="fl">27.7</span>]  </span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a>ys <span class="op">=</span> [<span class="fl">4.5</span>, <span class="dv">7</span>, <span class="fl">6.1</span>, <span class="fl">5.6</span>, <span class="fl">5.8</span>, <span class="fl">5.2</span>, <span class="fl">4.1</span>] </span>
+<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a>d0 <span class="op">=</span> <span class="dv">3</span></span>
+<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a>dn <span class="op">=</span> <span class="op">-</span><span class="dv">4</span> </span>
+<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Definir x como una variable simbólica</span></span>
+<span id="cb12-13"><a href="#cb12-13" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> sym.Symbol(<span class="st">'x'</span>)</span>
+<span id="cb12-14"><a href="#cb12-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-15"><a href="#cb12-15" aria-hidden="true" tabindex="-1"></a><span class="co"># Llamar a la función cubic_spline_clamped</span></span>
+<span id="cb12-16"><a href="#cb12-16" aria-hidden="true" tabindex="-1"></a>splines <span class="op">=</span> cubic_spline_clamped(xs, ys, d0, dn)</span>
+<span id="cb12-17"><a href="#cb12-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-18"><a href="#cb12-18" aria-hidden="true" tabindex="-1"></a><span class="co"># Crear una gráfica para cada spline</span></span>
+<span id="cb12-19"><a href="#cb12-19" aria-hidden="true" tabindex="-1"></a>x_vals <span class="op">=</span> np.linspace(<span class="bu">min</span>(xs), <span class="bu">max</span>(xs), <span class="dv">1000</span>)</span>
+<span id="cb12-20"><a href="#cb12-20" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i, spline <span class="kw">in</span> <span class="bu">enumerate</span>(splines):</span>
+<span id="cb12-21"><a href="#cb12-21" aria-hidden="true" tabindex="-1"></a>    y_vals <span class="op">=</span> [spline.subs(x, val) <span class="cf">for</span> val <span class="kw">in</span> x_vals]</span>
+<span id="cb12-22"><a href="#cb12-22" aria-hidden="true" tabindex="-1"></a>    plt.plot(x_vals, y_vals, label<span class="op">=</span><span class="ss">f'Spline </span><span class="sc">{</span>i<span class="op">+</span><span class="dv">1</span><span class="sc">}</span><span class="ss">'</span>)</span>
+<span id="cb12-23"><a href="#cb12-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-24"><a href="#cb12-24" aria-hidden="true" tabindex="-1"></a><span class="co"># Mostrar la gráfica</span></span>
+<span id="cb12-25"><a href="#cb12-25" aria-hidden="true" tabindex="-1"></a>plt.scatter(xs, ys, color<span class="op">=</span><span class="st">'red'</span>)</span>
+<span id="cb12-26"><a href="#cb12-26" aria-hidden="true" tabindex="-1"></a>plt.ylim(<span class="bu">min</span>(ys)<span class="op">-</span><span class="dv">1</span>, <span class="bu">max</span>(ys)<span class="op">+</span><span class="dv">1</span>)</span>
+<span id="cb12-27"><a href="#cb12-27" aria-hidden="true" tabindex="-1"></a>plt.legend()</span>
+<span id="cb12-28"><a href="#cb12-28" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="Deber07_Leandro_Bravo_files/figure-html/cell-9-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<div id="6ac00fe7-e62f-445a-801e-f6461e4c2e06" class="cell" data-tags="[]" data-execution_count="457">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Curva 3</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> sympy <span class="im">as</span> sym</span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Definir los puntos a interpolar y las derivadas en el primer y último punto</span></span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a>xs <span class="op">=</span> [<span class="fl">27.7</span>, <span class="dv">28</span>, <span class="dv">29</span>, <span class="dv">30</span>]  </span>
+<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a>ys <span class="op">=</span> [<span class="fl">4.1</span>, <span class="fl">4.3</span>, <span class="fl">4.1</span>, <span class="dv">3</span>] </span>
+<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a>d0 <span class="op">=</span> <span class="fl">0.33</span></span>
+<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a>dn <span class="op">=</span> <span class="op">-</span><span class="fl">1.5</span></span>
+<span id="cb13-11"><a href="#cb13-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-12"><a href="#cb13-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Definir x como una variable simbólica</span></span>
+<span id="cb13-13"><a href="#cb13-13" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> sym.Symbol(<span class="st">'x'</span>)</span>
+<span id="cb13-14"><a href="#cb13-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-15"><a href="#cb13-15" aria-hidden="true" tabindex="-1"></a><span class="co"># Llamar a la función cubic_spline_clamped</span></span>
+<span id="cb13-16"><a href="#cb13-16" aria-hidden="true" tabindex="-1"></a>splines <span class="op">=</span> cubic_spline_clamped(xs, ys, d0, dn)</span>
+<span id="cb13-17"><a href="#cb13-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-18"><a href="#cb13-18" aria-hidden="true" tabindex="-1"></a><span class="co"># Crear una gráfica para cada spline</span></span>
+<span id="cb13-19"><a href="#cb13-19" aria-hidden="true" tabindex="-1"></a>x_vals <span class="op">=</span> np.linspace(<span class="bu">min</span>(xs), <span class="bu">max</span>(xs), <span class="dv">1000</span>)</span>
+<span id="cb13-20"><a href="#cb13-20" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i, spline <span class="kw">in</span> <span class="bu">enumerate</span>(splines):</span>
+<span id="cb13-21"><a href="#cb13-21" aria-hidden="true" tabindex="-1"></a>    y_vals <span class="op">=</span> [spline.subs(x, val) <span class="cf">for</span> val <span class="kw">in</span> x_vals]</span>
+<span id="cb13-22"><a href="#cb13-22" aria-hidden="true" tabindex="-1"></a>    plt.plot(x_vals, y_vals, label<span class="op">=</span><span class="ss">f'Spline </span><span class="sc">{</span>i<span class="op">+</span><span class="dv">1</span><span class="sc">}</span><span class="ss">'</span>)</span>
+<span id="cb13-23"><a href="#cb13-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-24"><a href="#cb13-24" aria-hidden="true" tabindex="-1"></a><span class="co"># Mostrar la gráfica</span></span>
+<span id="cb13-25"><a href="#cb13-25" aria-hidden="true" tabindex="-1"></a>plt.scatter(xs, ys, color<span class="op">=</span><span class="st">'red'</span>)</span>
+<span id="cb13-26"><a href="#cb13-26" aria-hidden="true" tabindex="-1"></a>plt.ylim(<span class="bu">min</span>(ys)<span class="op">-</span><span class="fl">0.5</span>, <span class="bu">max</span>(ys)<span class="op">+</span><span class="fl">0.5</span>)</span>
+<span id="cb13-27"><a href="#cb13-27" aria-hidden="true" tabindex="-1"></a>plt.legend()</span>
+<span id="cb13-28"><a href="#cb13-28" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="Deber07_Leandro_Bravo_files/figure-html/cell-10-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+
+</main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

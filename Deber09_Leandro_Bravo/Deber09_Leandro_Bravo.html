@@ -1,0 +1,1095 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.4.553">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>deber09_leandro_bravo</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="Deber09_Leandro_Bravo_files/libs/clipboard/clipboard.min.js"></script>
+<script src="Deber09_Leandro_Bravo_files/libs/quarto-html/quarto.js"></script>
+<script src="Deber09_Leandro_Bravo_files/libs/quarto-html/popper.min.js"></script>
+<script src="Deber09_Leandro_Bravo_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="Deber09_Leandro_Bravo_files/libs/quarto-html/anchor.min.js"></script>
+<link href="Deber09_Leandro_Bravo_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="Deber09_Leandro_Bravo_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="Deber09_Leandro_Bravo_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="Deber09_Leandro_Bravo_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="Deber09_Leandro_Bravo_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+</head>
+
+<body class="fullcontent">
+
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+
+<main class="content" id="quarto-document-content">
+
+
+
+
+<p style="text-align: right;">
+<img src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQWwhLsJ3D-RF2wSL1w2Zl8z6DYSAs4vcqmQxYnELC0rwxX06HJ" alt="Logo EPN" width="100" height="100" style="float: right;">
+</p><center>
+<span style="font-size: 26px; font-weight: bold;">ESCUELA POLITÉCNICA NACIONAL</span>
+</center>
+<center>
+<span style="font-size: 26px; font-weight: bold;">MÉTODOS NUMÉRICOS</span>
+</center>
+<h3 style="font-size: 20px;" class="anchored">
+<span style="float:left">Leandro Bravo</span> <span style="float:right">GR1CC</span>
+</h3>
+<p><br></p>
+<section id="tarea-09---eliminación-gaussiana-vs-gauss-jordan" class="level2">
+<h2 class="anchored" data-anchor-id="tarea-09---eliminación-gaussiana-vs-gauss-jordan">Tarea 09 - Eliminación Gaussiana vs Gauss-Jordan</h2>
+<div id="5c949e5a-1b07-4504-883e-98b03f9d531e" class="cell" data-tags="[]" data-execution_count="64">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="op">%</span>load_ext autoreload</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> src <span class="im">import</span> eliminacion_gaussiana_redondeo,eliminacion_gaussiana, multiplicar_matriz_vector</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> src <span class="im">import</span> gauss_jordan</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>The autoreload extension is already loaded. To reload it, use:
+  %reload_ext autoreload</code></pre>
+</div>
+</div>
+<section id="conjunto-de-ejercicios" class="level3">
+<h3 class="anchored" data-anchor-id="conjunto-de-ejercicios">Conjunto de Ejercicios</h3>
+<ol type="1">
+<li>Para cada uno de los siguientes sistemas lineales, obtenga, de ser posible, una solución con métodos gráficos. Explique los resultados desde un punto de vista geométrico.<br>
+</li>
+</ol>
+<ol type="a">
+<li><span class="math inline">\(x_1 + 2x_2 = 0\)</span>,     b. <span class="math inline">\(x_1 + 2x_2 = 3\)</span>,      c.&nbsp;<span class="math inline">\(2x_1 + x_2 = -1\)</span>,      d.&nbsp;<span class="math inline">\(2x_1 + x_2 + x_3 = 1\)</span>,<br>
+&nbsp;&nbsp;&nbsp;&nbsp; <span class="math inline">\(x_1 - x_2 = 0\)</span>.      <span class="math inline">\(-2x_1 - 4x_2 = 6.\)</span>      &nbsp;&nbsp;&nbsp;&nbsp; <span class="math inline">\(x_1 + x_2 = 2\)</span>,      &nbsp;&nbsp;&nbsp;&nbsp; <span class="math inline">\(2x_1 + 4x_2 - x_3 = -1\)</span>.<br>
+&nbsp;&nbsp;&nbsp;&nbsp; <span class="math inline">\(x_1 - 3x_2 = 5\)</span></li>
+</ol>
+<ol start="2" type="1">
+<li>Utilice la eliminación gaussiana con sustitución hacia atrás y aritmética de redondeo de dos dígitos para resolver los siguientes sistemas lineales. No reordene las ecuaciones. (La solución exacta para cada sistema es <span class="math inline">\(x_1=-1\)</span>,<span class="math inline">\(x_2=1,x_3=3\)</span>)</li>
+</ol>
+<ol type="a">
+<li><span class="math inline">\(-x_1+4x_2+x_3 = 8\)</span>,           b. <span class="math inline">\(4x_1+2x_2-x_3 = -5\)</span>,<br>
+&nbsp;&nbsp;&nbsp;&nbsp; <span class="math inline">\(\dfrac{5}{3}x_1+\dfrac{2}{3}x_2+\dfrac{2}{3}x_3 = 1\)</span>,      &nbsp;&nbsp;&nbsp; <span class="math inline">\(\dfrac{1}{9}x_1+\dfrac{1}{9}x_2-\dfrac{1}{3}x_3 = -1\)</span>,<br>
+&nbsp;&nbsp;&nbsp;&nbsp; <span class="math inline">\(2x_1+x_2+4x_3=11\)</span>.           &nbsp;&nbsp;&nbsp;&nbsp;<span class="math inline">\(x_1+4x_2+2x_3=9\)</span></li>
+</ol>
+<div id="7e6602e6-4e86-40fa-a093-1a040b5d11e2" class="cell" data-tags="[]" data-execution_count="68">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Literal a:</span><span class="ch">\n</span><span class="st">"</span>)</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="op">%</span>autoreload <span class="dv">2</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>A <span class="op">=</span> [[<span class="op">-</span><span class="dv">1</span>,<span class="dv">4</span>,<span class="dv">1</span>,<span class="dv">8</span>],[<span class="dv">5</span><span class="op">/</span><span class="dv">3</span>,<span class="dv">2</span><span class="op">/</span><span class="dv">3</span>,<span class="dv">2</span><span class="op">/</span><span class="dv">3</span>,<span class="dv">1</span>],[<span class="dv">2</span>,<span class="dv">1</span>,<span class="dv">4</span>,<span class="dv">11</span>]]</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>sol_a <span class="op">=</span> eliminacion_gaussiana_redondeo(A)</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"La solución es:"</span>,sol_a)</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">Literal b:</span><span class="ch">\n</span><span class="st">"</span>)</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>B <span class="op">=</span> [[<span class="dv">4</span>,<span class="dv">2</span>,<span class="op">-</span><span class="dv">1</span>,<span class="op">-</span><span class="dv">5</span>],[<span class="dv">1</span><span class="op">/</span><span class="dv">9</span>,<span class="dv">1</span><span class="op">/</span><span class="dv">9</span>,<span class="op">-</span><span class="dv">1</span><span class="op">/</span><span class="dv">3</span>,<span class="op">-</span><span class="dv">1</span>],[<span class="dv">1</span>,<span class="dv">4</span>,<span class="dv">2</span>,<span class="dv">9</span>]]</span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>sol_b <span class="op">=</span> eliminacion_gaussiana_redondeo(B)</span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"La solución es:"</span>,sol_b)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Literal a:
+
+[07-28 11:36:49][INFO] 
+[[ 2.00e+00  1.00e+00  4.00e+00  1.10e+01]
+ [ 1.00e-02 -1.60e-01 -2.65e+00 -8.13e+00]
+ [ 0.00e+00  4.50e+00  3.00e+00  1.35e+01]]
+[07-28 11:36:49][INFO] 
+[[ 2.00e+00  1.00e+00  4.00e+00  1.10e+01]
+ [ 0.00e+00  4.50e+00  3.00e+00  1.35e+01]
+ [ 1.00e-02  2.00e-02 -2.53e+00 -7.59e+00]]
+La solución es: [-1.  1.  3.]
+
+Literal b:
+
+[07-28 11:36:49][INFO] 
+[[ 4.000e+00  2.000e+00 -1.000e+00 -5.000e+00]
+ [-1.000e-02  5.000e-02 -3.000e-01 -8.500e-01]
+ [ 0.000e+00  3.500e+00  2.250e+00  1.025e+01]]
+[07-28 11:36:49][INFO] 
+[[ 4.000e+00  2.000e+00 -1.000e+00 -5.000e+00]
+ [ 0.000e+00  3.500e+00  2.250e+00  1.025e+01]
+ [-1.000e-02  1.000e-02 -3.200e-01 -9.500e-01]]
+La solución es: [-1.02     1.02     2.96875]</code></pre>
+</div>
+</div>
+<ol start="3" type="1">
+<li>Utilice el algoritmo de eliminación gaussiana para resolver, de ser posible, los siguientes sistemas lineales, y determine si se necesitan intercambios de fila:</li>
+</ol>
+<ol type="a">
+<li><span class="math inline">\(x_1 - x_2 + 3x_3 = 2, \hspace{2cm}\)</span> b. <span class="math inline">\(2x_1 - 1.5x_2 + 3x_3 = 1\)</span>,<br>
+<span class="math inline">\(\hspace{0.2cm}3x_1 - 3x_2 + x_3 = -1\)</span>, <span class="math inline">\(\hspace{2cm}-x_1 + 2x_3 \hspace{1.5cm}= 3\)</span>,<br>
+<span class="math inline">\(\hspace{0.3cm}x_1 + x_2 \hspace{1.3cm}= 3\)</span>. <span class="math inline">\(\hspace{2.4cm}4x_1 - 4.5x_2 + 5x_3 = 1\)</span>,<br>
+</li>
+<li><span class="math inline">\(2x_1 \hspace{3cm} = 3, \hspace{2cm}\)</span> d.&nbsp;<span class="math inline">\(x_1 + x_2 + x_4 \hspace{1.6cm}= 2\)</span>,<br>
+<span class="math inline">\(\hspace{0.6cm}x_1 + 1.5x_2 \hspace{1.5cm}= 4.5\)</span>, <span class="math inline">\(\hspace{2cm}2x_1 + x_2 - x_3 + x_4 \hspace{0.6cm}= 1\)</span>,<br>
+<span class="math inline">\(\hspace{0.1cm}-3x_2 + 0.5x_3 \hspace{1.3cm}= -6.6\)</span>, <span class="math inline">\(\hspace{2cm}4x_1 - x_2 - 2x_3 + 2x_4 = 0\)</span>,<br>
+<span class="math inline">\(\hspace{0.4cm}2x_1 - 2x_2 + x_3 + x_4 = 0.8\)</span>. <span class="math inline">\(\hspace{2cm}3x_1 - x_2 - x_3 + 2x_4 \hspace{0.2cm}= -3\)</span>.</li>
+</ol>
+<div id="977e2b66-a040-4778-b28a-38b30f38230d" class="cell" data-tags="[]" data-execution_count="70">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="op">%</span>autoreload <span class="dv">2</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Literal a:</span><span class="ch">\n</span><span class="st">"</span>)</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>A <span class="op">=</span> [[<span class="dv">1</span>,<span class="op">-</span><span class="dv">1</span>,<span class="dv">3</span>,<span class="dv">2</span>],[<span class="dv">3</span>,<span class="op">-</span><span class="dv">3</span>,<span class="dv">1</span>,<span class="op">-</span><span class="dv">1</span>],[<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">3</span>]]</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>sol_a <span class="op">=</span> eliminacion_gaussiana(A)</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">La solución es:"</span>,sol_a)</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">Literal b:</span><span class="ch">\n</span><span class="st">"</span>)</span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>B <span class="op">=</span> [[<span class="dv">2</span>,<span class="op">-</span><span class="fl">1.5</span>,<span class="dv">3</span>,<span class="dv">1</span>],[<span class="op">-</span><span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">2</span>,<span class="dv">3</span>],[<span class="dv">4</span>,<span class="op">-</span><span class="fl">4.5</span>,<span class="dv">5</span>,<span class="dv">1</span>]]</span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>sol_b <span class="op">=</span> eliminacion_gaussiana(B)</span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">La solución es:"</span>,sol_b)</span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">Literal c:</span><span class="ch">\n</span><span class="st">"</span>)</span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>C <span class="op">=</span> [[<span class="dv">2</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">3</span>],[<span class="dv">1</span>,<span class="fl">1.5</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="fl">4.5</span>],[<span class="dv">0</span>,<span class="op">-</span><span class="dv">3</span>,<span class="fl">0.5</span>,<span class="dv">0</span>,<span class="op">-</span><span class="fl">6.6</span>],[<span class="dv">2</span>,<span class="op">-</span><span class="dv">2</span>,<span class="dv">1</span>,<span class="dv">1</span>,<span class="fl">0.8</span>]]</span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>sol_c <span class="op">=</span> eliminacion_gaussiana(C)</span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">La solución es:"</span>,sol_c)</span>
+<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">Literal d:</span><span class="ch">\n</span><span class="st">"</span>)</span>
+<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a>D <span class="op">=</span> [[<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">2</span>],[<span class="dv">2</span>,<span class="dv">1</span>,<span class="op">-</span><span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">1</span>],[<span class="dv">4</span>,<span class="op">-</span><span class="dv">1</span>,<span class="op">-</span><span class="dv">2</span>,<span class="dv">2</span>,<span class="dv">0</span>],[<span class="dv">3</span>,<span class="op">-</span><span class="dv">1</span>,<span class="op">-</span><span class="dv">1</span>,<span class="dv">2</span>,<span class="op">-</span><span class="dv">3</span>]]</span>
+<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a>sol_d <span class="op">=</span> eliminacion_gaussiana(D)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Literal a:
+
+[07-28 11:36:49][INFO] 
+[[ 3.         -3.          1.         -1.        ]
+ [ 0.          0.          2.6666667   2.3333333 ]
+ [ 0.          2.         -0.33333334  3.3333333 ]]
+[07-28 11:36:49][INFO] 
+[[ 3.         -3.          1.         -1.        ]
+ [ 0.          2.         -0.33333334  3.3333333 ]
+ [ 0.          0.          2.6666667   2.3333333 ]]
+
+La solución es: [1.1875     1.8125     0.87499994]
+
+Literal b:
+
+[07-28 11:36:49][INFO] 
+[[ 4.    -4.5    5.     1.   ]
+ [ 0.    -1.125  3.25   3.25 ]
+ [ 0.     0.75   0.5    0.5  ]]
+[07-28 11:36:49][INFO] 
+[[ 4.        -4.5        5.         1.       ]
+ [ 0.        -1.125      3.25       3.25     ]
+ [ 0.         0.         2.6666667  2.6666667]]
+
+La solución es: [-1. -0.  1.]
+
+Literal c:
+
+[07-28 11:36:49][INFO] 
+[[ 2.   0.   0.   0.   3. ]
+ [ 0.   1.5  0.   0.   3. ]
+ [ 0.  -3.   0.5  0.  -6.6]
+ [ 0.  -2.   1.   1.  -2.2]]
+[07-28 11:36:49][INFO] 
+[[ 2.          0.          0.          0.          3.        ]
+ [ 0.         -3.          0.5         0.         -6.6       ]
+ [ 0.          0.          0.25        0.         -0.29999995]
+ [ 0.          0.          0.6666666   1.          2.2       ]]
+[07-28 11:36:49][INFO] 
+[[ 2.          0.          0.          0.          3.        ]
+ [ 0.         -3.          0.5         0.         -6.6       ]
+ [ 0.          0.          0.6666666   1.          2.2       ]
+ [ 0.          0.          0.         -0.37500003 -1.125     ]]
+
+La solución es: [ 1.5        2.        -1.1999997  2.9999998]
+
+Literal d:
+
+[07-28 11:36:49][INFO] 
+[[ 4.   -1.   -2.    2.    0.  ]
+ [ 0.    1.5   0.    0.    1.  ]
+ [ 0.    1.25  0.5   0.5   2.  ]
+ [ 0.   -0.25  0.5   0.5  -3.  ]]
+[07-28 11:36:49][INFO] 
+[[ 4.        -1.        -2.         2.         0.       ]
+ [ 0.         1.5        0.         0.         1.       ]
+ [ 0.         0.         0.5        0.5        1.1666667]
+ [ 0.         0.         0.5        0.5       -2.8333333]]
+[07-28 11:36:49][INFO] 
+[[ 4.        -1.        -2.         2.         0.       ]
+ [ 0.         1.5        0.         0.         1.       ]
+ [ 0.         0.         0.5        0.5        1.1666667]
+ [ 0.         0.         0.         0.        -4.       ]]
+
+No existe solución.</code></pre>
+</div>
+</div>
+<ol start="4" type="1">
+<li>Use el algoritmo de eliminación gaussiana y la aritmética computacional de precisión de 32 bits para resolver los siguientes sistemas lineales.</li>
+</ol>
+<ol type="a">
+<li><p><span class="math inline">\(\dfrac{1}{4}x_1 + \dfrac{1}{5}x_2 + \dfrac{1}{6}x_3 = 9,\hspace{2cm}\)</span> b. <span class="math inline">\(3.333x_1 + 15920x_2 - 10.333x_3 = 15913\)</span>,<br>
+<span class="math inline">\(\hspace{0.3cm}\dfrac{1}{3}x_1 + \dfrac{1}{4}x_2 + \dfrac{1}{5}x_3 = 8\)</span>, <span class="math inline">\(\hspace{2.5cm}2.222x_1 + 16.71x_2 + 9.612x_3 = 28.544\)</span>,<br>
+<span class="math inline">\(\hspace{0.3cm}\dfrac{1}{2}x_1 + x_2 + 2x_3 \hspace{0.7cm}= 8\)</span>. <span class="math inline">\(\hspace{2.2cm}1.5611x_1 + 5.1791x_2 + 1.6852x_3 = 8.4254\)</span>.</p></li>
+<li><p><span class="math inline">\(x_1 + \dfrac{1}{2}x_2 + \dfrac{1}{3}x_3 + \dfrac{1}{4}x_4 =\dfrac{1}{6},\hspace{2cm}\)</span> d.&nbsp;<span class="math inline">\(2x_1 + x_2 - x_3 + x_4 - 3x_5 = 7\)</span>,<br>
+<span class="math inline">\(\dfrac{1}{2}x_1 + \dfrac{1}{3}x_2 + \dfrac{1}{4}x_3 + \dfrac{1}{5}x_4 = \dfrac{1}{7}\)</span>, <span class="math inline">\(\hspace{2.5cm}x_1 + 2x_3 - x_4 + x_5 \hspace{1cm}= 2\)</span>,<br>
+<span class="math inline">\(\dfrac{1}{3}x_1 + \dfrac{1}{4}x_2 + \dfrac{1}{5}x_3 + \dfrac{1}{6}x_4 = \dfrac{1}{8}\)</span>, <span class="math inline">\(\hspace{2.1cm}-2x_2 - x_3 + x_4 - x_5 \hspace{1cm} = -5\)</span>,<br>
+<span class="math inline">\(\dfrac{1}{4}x_1 + \dfrac{1}{5}x_2 + \dfrac{1}{6}x_3 + \dfrac{1}{7}x_4 = \dfrac{1}{9}\)</span>. <span class="math inline">\(\hspace{2.4cm}3x_1 + x_2 - 4x_3 + 5x_5 \hspace{0.5cm} = 6\)</span>, <span class="math inline">\(\hspace{8.5cm}x_1 - x_2 - x_3 - x_4 + x_5 = -3\)</span></p></li>
+</ol>
+<div id="06ce4b67-ce3e-4c01-9b26-99b4e698e91a" class="cell" data-tags="[]" data-execution_count="72">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="op">%</span>autoreload <span class="dv">2</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Literal a:</span><span class="ch">\n</span><span class="st">"</span>)</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>A <span class="op">=</span> [[<span class="dv">1</span><span class="op">/</span><span class="dv">4</span>,<span class="dv">1</span><span class="op">/</span><span class="dv">5</span>,<span class="dv">1</span><span class="op">/</span><span class="dv">6</span>,<span class="dv">9</span>],[<span class="dv">1</span><span class="op">/</span><span class="dv">3</span>,<span class="dv">1</span><span class="op">/</span><span class="dv">4</span>,<span class="dv">1</span><span class="op">/</span><span class="dv">5</span>,<span class="dv">8</span>],[<span class="dv">1</span><span class="op">/</span><span class="dv">2</span>,<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">8</span>]]</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>sol_a <span class="op">=</span> eliminacion_gaussiana(A)</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">La solución es:"</span>,sol_a)</span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">Literal b:</span><span class="ch">\n</span><span class="st">"</span>)</span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>B <span class="op">=</span> [[<span class="fl">3.333</span>,<span class="dv">15920</span>,<span class="op">-</span><span class="fl">10.333</span>,<span class="dv">15913</span>],[<span class="fl">2.222</span>,<span class="fl">16.71</span>,<span class="fl">9.612</span>,<span class="fl">28.544</span>],[<span class="fl">1.5611</span>,<span class="fl">5.1791</span>,<span class="fl">1.6852</span>,<span class="fl">8.4254</span>]]</span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>sol_b <span class="op">=</span> eliminacion_gaussiana(B)</span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">La solución es:"</span>,sol_b)</span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">Literal c:</span><span class="ch">\n</span><span class="st">"</span>)</span>
+<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a>C <span class="op">=</span> [[<span class="dv">1</span>,<span class="dv">1</span><span class="op">/</span><span class="dv">2</span>,<span class="dv">1</span><span class="op">/</span><span class="dv">3</span>,<span class="dv">1</span><span class="op">/</span><span class="dv">4</span>,<span class="dv">1</span><span class="op">/</span><span class="dv">6</span>],[<span class="dv">1</span><span class="op">/</span><span class="dv">2</span>,<span class="dv">1</span><span class="op">/</span><span class="dv">3</span>,<span class="dv">1</span><span class="op">/</span><span class="dv">4</span>,<span class="dv">1</span><span class="op">/</span><span class="dv">5</span>,<span class="dv">1</span><span class="op">/</span><span class="dv">7</span>],[<span class="dv">1</span><span class="op">/</span><span class="dv">3</span>,<span class="dv">1</span><span class="op">/</span><span class="dv">4</span>,<span class="dv">1</span><span class="op">/</span><span class="dv">5</span>,<span class="dv">1</span><span class="op">/</span><span class="dv">6</span>,<span class="dv">1</span><span class="op">/</span><span class="dv">8</span>],[<span class="dv">1</span><span class="op">/</span><span class="dv">4</span>,<span class="dv">1</span><span class="op">/</span><span class="dv">5</span>,<span class="dv">1</span><span class="op">/</span><span class="dv">6</span>,<span class="dv">1</span><span class="op">/</span><span class="dv">7</span>,<span class="dv">1</span><span class="op">/</span><span class="dv">9</span>]]</span>
+<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a>sol_c <span class="op">=</span> eliminacion_gaussiana(C)</span>
+<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">La solución es:"</span>,sol_c)</span>
+<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-17"><a href="#cb7-17" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">Literal d:</span><span class="ch">\n</span><span class="st">"</span>)</span>
+<span id="cb7-18"><a href="#cb7-18" aria-hidden="true" tabindex="-1"></a>D <span class="op">=</span> [[<span class="dv">2</span>,<span class="dv">1</span>,<span class="op">-</span><span class="dv">1</span>,<span class="dv">1</span>,<span class="op">-</span><span class="dv">3</span>,<span class="dv">7</span>],[<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">2</span>,<span class="op">-</span><span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">2</span>],[<span class="dv">0</span>,<span class="op">-</span><span class="dv">2</span>,<span class="op">-</span><span class="dv">1</span>,<span class="dv">1</span>,<span class="op">-</span><span class="dv">1</span>,<span class="op">-</span><span class="dv">5</span>],[<span class="dv">3</span>,<span class="dv">1</span>,<span class="op">-</span><span class="dv">4</span>,<span class="dv">0</span>,<span class="dv">5</span>,<span class="dv">6</span>],[<span class="dv">1</span>,<span class="op">-</span><span class="dv">1</span>,<span class="op">-</span><span class="dv">1</span>,<span class="op">-</span><span class="dv">1</span>,<span class="dv">1</span>,<span class="op">-</span><span class="dv">3</span>]]</span>
+<span id="cb7-19"><a href="#cb7-19" aria-hidden="true" tabindex="-1"></a>sol_d <span class="op">=</span> eliminacion_gaussiana(D)</span>
+<span id="cb7-20"><a href="#cb7-20" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">La solución es:"</span>,sol_d)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Literal a:
+
+[07-28 11:36:50][INFO] 
+[[ 0.5        1.         2.         8.       ]
+ [ 0.        -0.4166667 -1.1333333  2.6666665]
+ [ 0.        -0.3       -0.8333333  5.       ]]
+[07-28 11:36:50][INFO] 
+[[ 0.5         1.          2.          8.        ]
+ [ 0.         -0.4166667  -1.1333333   2.6666665 ]
+ [ 0.          0.         -0.01733333  3.0800002 ]]
+
+La solución es: [-227.07697  476.92322 -177.69237]
+
+Literal b:
+
+[07-28 11:36:50][INFO] 
+[[ 3.3329999e+00  1.5920000e+04 -1.0333000e+01  1.5913000e+04]
+ [ 0.0000000e+00 -1.0596623e+04  1.6500668e+01 -1.0580122e+04]
+ [ 0.0000000e+00 -7.4513804e+03  6.5249376e+00 -7.4448555e+03]]
+[07-28 11:36:50][INFO] 
+[[ 3.3329999e+00  1.5920000e+04 -1.0333000e+01  1.5913000e+04]
+ [ 0.0000000e+00 -1.0596623e+04  1.6500668e+01 -1.0580122e+04]
+ [ 0.0000000e+00  0.0000000e+00 -5.0780745e+00 -5.0786133e+00]]
+
+La solución es: [0.9997431 1.0000001 1.0001061]
+
+Literal c:
+
+[07-28 11:36:50][INFO] 
+[[1.         0.5        0.33333334 0.25       0.16666667]
+ [0.         0.08333334 0.08333333 0.075      0.05952381]
+ [0.         0.08333333 0.08888888 0.08333334 0.06944444]
+ [0.         0.075      0.08333334 0.08035715 0.06944445]]
+[07-28 11:36:50][INFO] 
+[[1.         0.5        0.33333334 0.25       0.16666667]
+ [0.         0.08333334 0.08333333 0.075      0.05952381]
+ [0.         0.         0.00555557 0.00833335 0.00992064]
+ [0.         0.         0.00833335 0.01285715 0.01587302]]
+[07-28 11:36:50][INFO] 
+[[ 1.0000000e+00  5.0000000e-01  3.3333334e-01  2.5000000e-01
+   1.6666667e-01]
+ [ 0.0000000e+00  8.3333343e-02  8.3333328e-02  7.5000003e-02
+   5.9523813e-02]
+ [ 0.0000000e+00  0.0000000e+00  8.3333477e-03  1.2857154e-02
+   1.5873022e-02]
+ [ 0.0000000e+00  0.0000000e+00  0.0000000e+00 -2.3809634e-04
+  -6.6138618e-04]]
+
+La solución es: [-0.03174745  0.59525675 -2.3809996   2.7778091 ]
+
+Literal d:
+
+[07-28 11:36:50][INFO] 
+[[ 3.          1.         -4.          0.          5.          6.        ]
+ [ 0.         -0.33333334  3.3333335  -1.         -0.66666675  0.        ]
+ [ 0.         -2.         -1.          1.         -1.         -5.        ]
+ [ 0.          0.3333333   1.6666667   1.         -6.3333335   3.        ]
+ [ 0.         -1.3333334   0.33333337 -1.         -0.66666675 -5.        ]]
+[07-28 11:36:50][INFO] 
+[[ 3.0000000e+00  1.0000000e+00 -4.0000000e+00  0.0000000e+00
+   5.0000000e+00  6.0000000e+00]
+ [ 0.0000000e+00 -2.0000000e+00 -1.0000000e+00  1.0000000e+00
+  -1.0000000e+00 -5.0000000e+00]
+ [ 0.0000000e+00  0.0000000e+00  3.5000002e+00 -1.1666666e+00
+  -5.0000006e-01  8.3333337e-01]
+ [ 0.0000000e+00  0.0000000e+00  1.5000001e+00  1.1666666e+00
+  -6.5000000e+00  2.1666667e+00]
+ [ 0.0000000e+00  0.0000000e+00  1.0000000e+00 -1.6666667e+00
+  -5.9604645e-08 -1.6666665e+00]]
+[07-28 11:36:50][INFO] 
+[[ 3.          1.         -4.          0.          5.          6.        ]
+ [ 0.         -2.         -1.          1.         -1.         -5.        ]
+ [ 0.          0.          3.5000002  -1.1666666  -0.50000006  0.8333334 ]
+ [ 0.          0.          0.          1.6666666  -6.285714    1.8095238 ]
+ [ 0.          0.          0.         -1.3333335   0.14285709 -1.9047618 ]]
+[07-28 11:36:50][INFO] 
+[[ 3.          1.         -4.          0.          5.          6.        ]
+ [ 0.         -2.         -1.          1.         -1.         -5.        ]
+ [ 0.          0.          3.5000002  -1.1666666  -0.50000006  0.8333334 ]
+ [ 0.          0.          0.          1.6666666  -6.285714    1.8095238 ]
+ [ 0.          0.          0.          0.         -4.885715   -0.45714247]]
+
+La solución es: [1.8830409  2.8070176  0.730994   1.4385961  0.09356716]</code></pre>
+</div>
+</div>
+<ol start="5" type="1">
+<li>Dado el sistema lineal:</li>
+</ol>
+<p><span class="math display">\[x_1 - x_2 + \alpha x_3 = -2,\]</span> <span class="math display">\[-x_1 + 2x_2 - \alpha x_3 = 3,\]</span> <span class="math display">\[\alpha x_1 + x_2 + x_3 = 2\]</span>.</p>
+<p> Encuentre el valor(es) de <span class="math inline">\(\alpha\)</span> para los que el sistema no tiene soluciones.<br>
+Encuentre el valor(es) de <span class="math inline">\(\alpha\)</span> para los que el sistema tiene un número infinito de soluciones.<br>
+Suponga que existe una única solución para una a determinada, encuentre la solución.</p>
+</section>
+<section id="resolución-del-sistema" class="level3">
+<h3 class="anchored" data-anchor-id="resolución-del-sistema">Resolución del sistema</h3>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="Deber09_Leandro_Bravo_files/figure-html/c7bd5936-a8a8-4c07-8d31-257298ad91df-2-b8d9d06e-5a02-476f-92a5-8a9cc9537d79.png" class="img-fluid figure-img"></p>
+<figcaption>image.png</figcaption>
+</figure>
+</div>
+<section id="a-1" class="level4">
+<h4 class="anchored" data-anchor-id="a-1">1. a = 1;</h4>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="Deber09_Leandro_Bravo_files/figure-html/c7bd5936-a8a8-4c07-8d31-257298ad91df-3-c67faf34-95bd-4136-a53d-7daa5715044e.png" class="img-fluid figure-img"></p>
+<figcaption>image.png</figcaption>
+</figure>
+</div>
+</section>
+<section id="a--1" class="level4">
+<h4 class="anchored" data-anchor-id="a--1">2. a = -1;</h4>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="Deber09_Leandro_Bravo_files/figure-html/c7bd5936-a8a8-4c07-8d31-257298ad91df-1-0e750f3c-2fa0-4469-a414-315b9e42a360.png" class="img-fluid figure-img"></p>
+<figcaption>image.png</figcaption>
+</figure>
+</div>
+</section>
+</section>
+<section id="ejercicios-aplicados" class="level3">
+<h3 class="anchored" data-anchor-id="ejercicios-aplicados">Ejercicios Aplicados</h3>
+<ol start="6" type="1">
+<li>Suponga que en un sistema biológico existen n especies de animales y m fuentes de alimento. Si <span class="math inline">\(x_j\)</span> representa la población de las j-ésimas especies, para cada <span class="math inline">\(j = 1,2,\cdots\)</span>; <span class="math inline">\(b_i\)</span>; representa el suministro diario disponible del i-ésimo alimento y <span class="math inline">\(a_{ij}\)</span> representa la cantidad del i-ésimo alimento.</li>
+</ol>
+<p><span class="math display">\[a_{11}x_1 + a_{12}x_2 + \cdots + a_{1n}x_n = b_1,\]</span><br>
+<span class="math display">\[a_{21}x_1 + a_{22}x_2 + \cdots + a_{2n}x_n = b_2,\]</span><br>
+<span class="math display">\[\vdots \hspace{1.5cm} \vdots \hspace{2.2cm} \vdots \hspace{1cm} \vdots  \]</span> <span class="math display">\[a_{m1}x_1 + a_{m2}x_2 + \cdots + a_{mn}x_n = b_m,\]</span></p>
+<p>representa un equilibrio donde existe un suministro diario de alimento para cumplir con precisión con el promedio diario de consumo de cada especie.</p>
+<ol type="a">
+<li>Si</li>
+</ol>
+<p><span class="math display">\[\begin{equation*}
+    A = [a_{ij}] =
+    \begin{bmatrix}
+        1 &amp; 2 &amp; 0 &amp; 3 \\
+        1 &amp; 0 &amp; 2 &amp; 2 \\
+        0 &amp; 0 &amp; 1 &amp; 1
+    \end{bmatrix}
+\end{equation*}\]</span></p>
+<p>$ = (x_j)=[1000, 500, 350, 400],$ y <span class="math inline">\(\textbf{b}= (b_i) = [3500, 2700, 900]\)</span>. ¿Existe suficiente alimento para satisfacer el consumo promedio diario?<br>
+b. ¿Cuál es el número máximo de animales de cada especie que se podría agregar de forma individual al sistema con el suministro de alimento que cumpla con el consumo?<br>
+c.&nbsp;Si la especie 1 se extingue, ¿qué cantidad de incremento individual de las especies restantes se podría soportar?<br>
+d.&nbsp;Si la especie 2 se extingue, ¿qué cantidad de incremento individual de las especies restantes se podría soportar?</p>
+<ol type="a">
+<li>Para saber si existe suficiente alimento para satisfacer el consumo promedio diario, debemos multiplicar la matriz A por el número de especies x.</li>
+</ol>
+<div id="47425fe9-9d88-44a9-b7cb-28ea50d8a86c" class="cell" data-tags="[]" data-execution_count="78">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="op">%</span>autoreload <span class="dv">2</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>A <span class="op">=</span> np.array([[<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">0</span>,<span class="dv">3</span>],[<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">2</span>,<span class="dv">2</span>],[<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">1</span>]])</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> np.array([<span class="dv">1000</span>,<span class="dv">500</span>,<span class="dv">350</span>,<span class="dv">400</span>])</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>b_obtenido <span class="op">=</span>  multiplicar_matriz_vector(A,x)</span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"El vector de consumo promedio diario es de:"</span>,b_obtenido)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>El vector de consumo promedio diario es de: [3200. 2500.  750.]</code></pre>
+</div>
+</div>
+<p>Por tanto, sí existe suficiente alimento para satisfacer el consumo promedio diario para las diferentes poblaciones de animales.</p>
+<ol start="2" type="a">
+<li>Para saber el número máximo de animales de cada especie que se podría agregar de forma individual, es necesario hallar las soluciones usando A y b.</li>
+</ol>
+<div id="99bb55cb-f35c-4e56-b9f6-f8f67a18222b" class="cell" data-tags="[]" data-execution_count="81">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="op">%</span>autoreload <span class="dv">2</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>A <span class="op">=</span> np.array([[<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">0</span>,<span class="dv">3</span>],[<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">2</span>,<span class="dv">2</span>],[<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">1</span>]])</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> np.array([<span class="dv">1005</span>,<span class="dv">511</span>,<span class="dv">355</span>,<span class="dv">491</span>])</span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>b_obtenido <span class="op">=</span>  multiplicar_matriz_vector(A,x)</span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"El vector de consumo promedio diario es de:"</span>,b_obtenido)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>El vector de consumo promedio diario es de: [3500. 2697.  846.]</code></pre>
+</div>
+</div>
+<p>Por tanto, para que el alimento alcancé para todas las especies estás pueden crecer de la siguiente manera:<br>
+- Especie 1: Crece máximo en 5 individuos.<br>
+- Especie 2: Crece máximo en 11 individios.<br>
+- Especie 3: Crece máximo en 5 individuos.<br>
+- Especie 4: Crece máximo en 91 individuos.</p>
+<ol start="3" type="a">
+<li>Que la especie uno se extinga nos quiere decir que <span class="math inline">\(x_1=0\)</span>. Con lo que nos queda el siguiente sistema de ecuaciones:</li>
+</ol>
+<p><span class="math display">\[\begin{eqnarray} 2x_2 + 3x_4 = 3500 \\ 2x_3 + 2x_4 = 2700 \\ x_3+x_4=900 \end{eqnarray}\]</span></p>
+<div id="317848a9-c916-4704-8cbd-18aca636d960" class="cell" data-tags="[]" data-execution_count="84">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="op">%</span>autoreload <span class="dv">2</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>A <span class="op">=</span> np.array([[<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">0</span>,<span class="dv">3</span>],[<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">2</span>,<span class="dv">2</span>],[<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">1</span>]])</span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> np.array([<span class="dv">0</span>,<span class="dv">1000</span>,<span class="dv">400</span>,<span class="dv">500</span>])</span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>b_obtenido <span class="op">=</span>  multiplicar_matriz_vector(A,x)</span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"El vector de consumo promedio diario es de:"</span>,b_obtenido)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>El vector de consumo promedio diario es de: [3500. 1800.  900.]</code></pre>
+</div>
+</div>
+<p>Por tanto, si la especie 1 se extingue, las otras especies tener los siguientes incrementos de su población:<br>
+- Especie 2: Se incrementa en 500.<br>
+- Especie 3: Se incrementa en 50.<br>
+- Especie 4: Se incrementa en 100.</p>
+<ol start="4" type="a">
+<li>Que la especie dos se extinga nos quiere decir que <span class="math inline">\(x_2=0\)</span>. Con lo que nos queda el siguiente sistema de ecuaciones:</li>
+</ol>
+<p><span class="math display">\[\begin{eqnarray} x_1 + 3x_4 = 3500 \\ x_1 + 2x_4 = 2700 \\ x_3+x_4=900 \end{eqnarray}\]</span></p>
+<div id="e6b3693b-4766-4d54-a8bf-07319984eb97" class="cell" data-tags="[]" data-execution_count="87">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="op">%</span>autoreload <span class="dv">2</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>A <span class="op">=</span> np.array([[<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">0</span>,<span class="dv">3</span>],[<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">2</span>,<span class="dv">2</span>],[<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">1</span>]])</span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> np.array([<span class="dv">1080</span>,<span class="dv">0</span>,<span class="dv">380</span>,<span class="dv">430</span>])</span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>b_obtenido <span class="op">=</span>  multiplicar_matriz_vector(A,x)</span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"El vector de consumo promedio diario es de:"</span>,b_obtenido)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>El vector de consumo promedio diario es de: [2370. 2700.  810.]</code></pre>
+</div>
+</div>
+<p>Por tanto, si la especie 2 se extingue, las otras especies tener los siguientes incrementos de su población:<br>
+- Especie 1: Se incrementa en 80.<br>
+- Especie 3: Se incrementa en 30.<br>
+- Especie 4: Se incrementa en 30.</p>
+<p>Estos incrementos son máximos ya que si se varían un poco, el alimento dispuesto para las especies restante no es suficiente.</p>
+</section>
+<section id="ejercicios-teóricos" class="level3">
+<h3 class="anchored" data-anchor-id="ejercicios-teóricos">Ejercicios Teóricos</h3>
+<ol start="7" type="1">
+<li>Repita el ejercicio 4 con el método Gauss-Jordan</li>
+</ol>
+<div id="30ee32e6-2121-4780-a87c-277f05316295" class="cell" data-execution_count="91">
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="op">%</span>autoreload <span class="dv">2</span></span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Literal a:</span><span class="ch">\n</span><span class="st">"</span>)</span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>A <span class="op">=</span> [[<span class="dv">1</span><span class="op">/</span><span class="dv">4</span>,<span class="dv">1</span><span class="op">/</span><span class="dv">5</span>,<span class="dv">1</span><span class="op">/</span><span class="dv">6</span>,<span class="dv">9</span>],[<span class="dv">1</span><span class="op">/</span><span class="dv">3</span>,<span class="dv">1</span><span class="op">/</span><span class="dv">4</span>,<span class="dv">1</span><span class="op">/</span><span class="dv">5</span>,<span class="dv">8</span>],[<span class="dv">1</span><span class="op">/</span><span class="dv">2</span>,<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">8</span>]]</span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>sol_a <span class="op">=</span> gauss_jordan(A)</span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">La solución es:"</span>,sol_a)</span>
+<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">Literal b:</span><span class="ch">\n</span><span class="st">"</span>)</span>
+<span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a>B <span class="op">=</span> [[<span class="fl">3.333</span>,<span class="dv">15920</span>,<span class="op">-</span><span class="fl">10.333</span>,<span class="dv">15913</span>],[<span class="fl">2.222</span>,<span class="fl">16.71</span>,<span class="fl">9.612</span>,<span class="fl">28.544</span>],[<span class="fl">1.5611</span>,<span class="fl">5.1791</span>,<span class="fl">1.6852</span>,<span class="fl">8.4254</span>]]</span>
+<span id="cb17-9"><a href="#cb17-9" aria-hidden="true" tabindex="-1"></a>sol_b <span class="op">=</span> gauss_jordan(B)</span>
+<span id="cb17-10"><a href="#cb17-10" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">La solución es:"</span>,sol_b)</span>
+<span id="cb17-11"><a href="#cb17-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-12"><a href="#cb17-12" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">Literal c:</span><span class="ch">\n</span><span class="st">"</span>)</span>
+<span id="cb17-13"><a href="#cb17-13" aria-hidden="true" tabindex="-1"></a>C <span class="op">=</span> [[<span class="dv">1</span>,<span class="dv">1</span><span class="op">/</span><span class="dv">2</span>,<span class="dv">1</span><span class="op">/</span><span class="dv">3</span>,<span class="dv">1</span><span class="op">/</span><span class="dv">4</span>,<span class="dv">1</span><span class="op">/</span><span class="dv">6</span>],[<span class="dv">1</span><span class="op">/</span><span class="dv">2</span>,<span class="dv">1</span><span class="op">/</span><span class="dv">3</span>,<span class="dv">1</span><span class="op">/</span><span class="dv">4</span>,<span class="dv">1</span><span class="op">/</span><span class="dv">5</span>,<span class="dv">1</span><span class="op">/</span><span class="dv">7</span>],[<span class="dv">1</span><span class="op">/</span><span class="dv">3</span>,<span class="dv">1</span><span class="op">/</span><span class="dv">4</span>,<span class="dv">1</span><span class="op">/</span><span class="dv">5</span>,<span class="dv">1</span><span class="op">/</span><span class="dv">6</span>,<span class="dv">1</span><span class="op">/</span><span class="dv">8</span>],[<span class="dv">1</span><span class="op">/</span><span class="dv">4</span>,<span class="dv">1</span><span class="op">/</span><span class="dv">5</span>,<span class="dv">1</span><span class="op">/</span><span class="dv">6</span>,<span class="dv">1</span><span class="op">/</span><span class="dv">7</span>,<span class="dv">1</span><span class="op">/</span><span class="dv">9</span>]]</span>
+<span id="cb17-14"><a href="#cb17-14" aria-hidden="true" tabindex="-1"></a>sol_c <span class="op">=</span> gauss_jordan(C)</span>
+<span id="cb17-15"><a href="#cb17-15" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">La solución es:"</span>,sol_c)</span>
+<span id="cb17-16"><a href="#cb17-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-17"><a href="#cb17-17" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">Literal d:</span><span class="ch">\n</span><span class="st">"</span>)</span>
+<span id="cb17-18"><a href="#cb17-18" aria-hidden="true" tabindex="-1"></a>D <span class="op">=</span> [[<span class="dv">2</span>,<span class="dv">1</span>,<span class="op">-</span><span class="dv">1</span>,<span class="dv">1</span>,<span class="op">-</span><span class="dv">3</span>,<span class="dv">7</span>],[<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">2</span>,<span class="op">-</span><span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">2</span>],[<span class="dv">0</span>,<span class="op">-</span><span class="dv">2</span>,<span class="op">-</span><span class="dv">1</span>,<span class="dv">1</span>,<span class="op">-</span><span class="dv">1</span>,<span class="op">-</span><span class="dv">5</span>],[<span class="dv">3</span>,<span class="dv">1</span>,<span class="op">-</span><span class="dv">4</span>,<span class="dv">0</span>,<span class="dv">5</span>,<span class="dv">6</span>],[<span class="dv">1</span>,<span class="op">-</span><span class="dv">1</span>,<span class="op">-</span><span class="dv">1</span>,<span class="op">-</span><span class="dv">1</span>,<span class="dv">1</span>,<span class="op">-</span><span class="dv">3</span>]]</span>
+<span id="cb17-19"><a href="#cb17-19" aria-hidden="true" tabindex="-1"></a>sol_d <span class="op">=</span> gauss_jordan(D)</span>
+<span id="cb17-20"><a href="#cb17-20" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">La solución es:"</span>,sol_d)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Literal a:
+
+[07-28 11:36:52][INFO] 
+[[ 1.0000000e+00  8.0000001e-01  6.6666669e-01  3.6000000e+01]
+ [ 0.0000000e+00 -1.6666681e-02 -2.2222236e-02 -4.0000000e+00]
+ [ 0.0000000e+00  6.0000002e-01  1.6666666e+00 -1.0000000e+01]]
+[07-28 11:36:52][INFO] 
+[[   1.           0.          -0.3999998 -155.99985  ]
+ [  -0.           1.           1.333333   239.9998   ]
+ [   0.           0.           0.8666668 -153.9999   ]]
+[07-28 11:36:52][INFO] 
+[[   1.         0.         0.      -227.07668]
+ [  -0.         1.         0.       476.9226 ]
+ [   0.         0.         1.      -177.69215]]
+
+La solución es: [-227.07668  476.9226  -177.69215]
+
+Literal b:
+
+[07-28 11:36:52][INFO] 
+[[ 1.0000000e+00  3.3175967e+00  1.0794952e+00  5.3970919e+00]
+ [ 0.0000000e+00  9.3382998e+00  7.2133622e+00  1.6551662e+01]
+ [ 0.0000000e+00  1.5908942e+04 -1.3930958e+01  1.5895012e+04]]
+[07-28 11:36:52][INFO] 
+[[ 1.0000000e+00  0.0000000e+00 -1.4831798e+00 -4.8318005e-01]
+ [ 0.0000000e+00  1.0000000e+00  7.7244920e-01  1.7724493e+00]
+ [ 0.0000000e+00  0.0000000e+00 -1.2302780e+04 -1.2302781e+04]]
+[07-28 11:36:52][INFO] 
+[[ 1.          0.          0.          0.9999999 ]
+ [ 0.          1.          0.          0.99999994]
+ [-0.         -0.          1.          1.0000001 ]]
+
+La solución es: [0.9999999  0.99999994 1.0000001 ]
+
+Literal c:
+
+[07-28 11:36:52][INFO] 
+[[ 1.          0.8         0.6666667   0.5714286   0.44444445]
+ [ 0.         -0.06666666 -0.08333334 -0.0857143  -0.07936507]
+ [ 0.         -0.01666668 -0.02222224 -0.02380954 -0.02314815]
+ [ 0.         -0.3        -0.33333334 -0.3214286  -0.2777778 ]]
+[07-28 11:36:52][INFO] 
+[[ 1.          0.         -0.3999998  -0.57142836 -0.6666658 ]
+ [-0.          1.          1.333333    1.4285711   1.3888878 ]
+ [ 0.          0.          0.00555552  0.00952377  0.01322744]
+ [ 0.          0.          0.06666657  0.10714275  0.13888857]]
+[07-28 11:36:52][INFO] 
+[[ 1.          0.          0.          0.1142875   0.28571594]
+ [-0.          1.          0.         -0.857149   -1.7857188 ]
+ [ 0.          0.          1.          1.7142905   2.3809555 ]
+ [ 0.          0.          0.         -0.00714312 -0.01984157]]
+[07-28 11:36:52][INFO] 
+[[ 1.          0.          0.          0.         -0.03174219]
+ [-0.          1.          0.          0.          0.5951971 ]
+ [ 0.          0.          1.          0.         -2.3808553 ]
+ [-0.         -0.         -0.          1.          2.7777152 ]]
+
+La solución es: [-0.03174219  0.5951971  -2.3808553   2.7777152 ]
+
+Literal d:
+
+[07-28 11:36:52][INFO] 
+[[  1.   0.   2.  -1.   1.   2.]
+ [  0.   1.  -5.   3.  -5.   3.]
+ [  0.  -2.  -1.   1.  -1.  -5.]
+ [  0.   1. -10.   3.   2.   0.]
+ [  0.  -1.  -3.   0.   0.  -5.]]
+[07-28 11:36:52][INFO] 
+[[  1.   0.   2.  -1.   1.   2.]
+ [  0.   1.  -5.   3.  -5.   3.]
+ [  0.   0. -11.   7. -11.   1.]
+ [  0.   0.  -5.   0.   7.  -3.]
+ [  0.   0.  -8.   3.  -5.  -2.]]
+[07-28 11:36:52][INFO] 
+[[  1.           0.           0.          -1.           3.8
+    0.79999995]
+ [  0.           1.           0.           3.         -12.
+    6.        ]
+ [ -0.          -0.           1.          -0.          -1.4
+    0.6       ]
+ [  0.           0.           0.           7.         -26.4
+    7.6000004 ]
+ [  0.           0.           0.           3.         -16.2
+    2.8000002 ]]
+[07-28 11:36:52][INFO] 
+[[ 1.         0.         0.         0.        -1.6000001  1.7333333]
+ [ 0.         1.         0.         0.         4.200001   3.1999998]
+ [ 0.         0.         1.         0.        -1.4        0.6      ]
+ [ 0.         0.         0.         1.        -5.4        0.9333334]
+ [ 0.         0.         0.         0.        11.4        1.0666666]]
+[07-28 11:36:52][INFO] 
+[[1.         0.         0.         0.         0.         1.8830409 ]
+ [0.         1.         0.         0.         0.         2.8070173 ]
+ [0.         0.         1.         0.         0.         0.73099416]
+ [0.         0.         0.         1.         0.         1.4385965 ]
+ [0.         0.         0.         0.         1.         0.09356725]]
+
+La solución es: [1.8830409  2.8070173  0.73099416 1.4385965  0.09356725]</code></pre>
+</div>
+</div>
+</section>
+<section id="link-del-repositorio" class="level3">
+<h3 class="anchored" data-anchor-id="link-del-repositorio">Link del repositorio:</h3>
+<p>https://github.com/ElAlfa3007/M-todos_Num-ricos.git</p>
+</section>
+</section>
+
+</main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
