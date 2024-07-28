@@ -1,0 +1,1402 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.4.553">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>deber10_leandro_bravo</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="Deber10_Leandro_Bravo_files/libs/clipboard/clipboard.min.js"></script>
+<script src="Deber10_Leandro_Bravo_files/libs/quarto-html/quarto.js"></script>
+<script src="Deber10_Leandro_Bravo_files/libs/quarto-html/popper.min.js"></script>
+<script src="Deber10_Leandro_Bravo_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="Deber10_Leandro_Bravo_files/libs/quarto-html/anchor.min.js"></script>
+<link href="Deber10_Leandro_Bravo_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="Deber10_Leandro_Bravo_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="Deber10_Leandro_Bravo_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="Deber10_Leandro_Bravo_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="Deber10_Leandro_Bravo_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+</head>
+
+<body class="fullcontent">
+
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+
+<main class="content" id="quarto-document-content">
+
+
+
+
+<p style="text-align: right;">
+<img src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQWwhLsJ3D-RF2wSL1w2Zl8z6DYSAs4vcqmQxYnELC0rwxX06HJ" alt="Logo EPN" width="100" height="100" style="float: right;">
+</p><center>
+<span style="font-size: 26px; font-weight: bold;">ESCUELA POLITÉCNICA NACIONAL</span>
+</center>
+<center>
+<span style="font-size: 26px; font-weight: bold;">MÉTODOS NUMÉRICOS</span>
+</center>
+<h3 style="font-size: 20px;" class="anchored">
+<span style="float:left">Leandro Bravo</span> <span style="float:right">GR1CC</span>
+</h3>
+<p><br></p>
+<section id="tarea-10---descomposición-lu" class="level2">
+<h2 class="anchored" data-anchor-id="tarea-10---descomposición-lu">Tarea 10 - Descomposición LU</h2>
+<div id="5c25cc28-f342-4a47-b141-0a25afe9ec42" class="cell" data-tags="[]" data-execution_count="3">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="op">%</span>load_ext autoreload</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> src <span class="im">import</span> multiplicar_matrices, descomposicion_LU, resolver_LU</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> src <span class="im">import</span> eliminacion_gaussiana_L,eliminacion_gaussiana_U, determinante, inversa</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<section id="conjunto-de-ejercicios" class="level3">
+<h3 class="anchored" data-anchor-id="conjunto-de-ejercicios">Conjunto de Ejercicios</h3>
+<ol type="1">
+<li>Realice las siguientes multiplicaciones matriz-matriz:</li>
+</ol>
+<p> <span class="math display">\[\begin{equation*}
+    \begin{bmatrix}
+    2 &amp; -3 \\
+    3 &amp; -1
+    \end{bmatrix}
+    \begin{bmatrix}
+    1 &amp; 5 \\
+    2 &amp; 0
+    \end{bmatrix}
+\end{equation*}\]</span></p>
+<div id="6241d955-28ec-49ac-94c2-28b330d4db74" class="cell" data-tags="[]" data-execution_count="7">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="op">%</span>autoreload <span class="dv">2</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>A <span class="op">=</span> np.array([[<span class="dv">2</span>,<span class="op">-</span><span class="dv">3</span>],[<span class="dv">3</span>,<span class="op">-</span><span class="dv">1</span>]])</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>B <span class="op">=</span> np.array([[<span class="dv">1</span>,<span class="dv">5</span>],[<span class="dv">2</span>,<span class="dv">0</span>]])</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>C <span class="op">=</span> multiplicar_matrices(A,B)</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"El resultado de la multiplicación es: </span><span class="ch">\n</span><span class="st">"</span>,C)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>El resultado de la multiplicación es: 
+ [[-4 10]
+ [ 1 15]]</code></pre>
+</div>
+</div>
+<p> <span class="math display">\[\begin{equation*}
+    \begin{bmatrix}
+    2 &amp; -3 \\
+    3 &amp; -1
+    \end{bmatrix}
+    \begin{bmatrix}
+    1 &amp; 5 &amp; -4\\
+    -3 &amp; 2 &amp; 0
+    \end{bmatrix}
+\end{equation*}\]</span></p>
+<div id="174803de-31b2-4718-8723-92bae595d9b9" class="cell" data-tags="[]" data-execution_count="9">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="op">%</span>autoreload <span class="dv">2</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>A <span class="op">=</span> np.array([[<span class="dv">2</span>,<span class="op">-</span><span class="dv">3</span>],[<span class="dv">3</span>,<span class="op">-</span><span class="dv">1</span>]])</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>B <span class="op">=</span> np.array([[<span class="dv">1</span>,<span class="dv">5</span>,<span class="op">-</span><span class="dv">4</span>],[<span class="op">-</span><span class="dv">3</span>,<span class="dv">2</span>,<span class="dv">0</span>]])</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>C <span class="op">=</span> multiplicar_matrices(A,B)</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"El resultado de la multiplicación es: </span><span class="ch">\n</span><span class="st">"</span>,C)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>El resultado de la multiplicación es: 
+ [[ 11   4  -8]
+ [  6  13 -12]]</code></pre>
+</div>
+</div>
+<p></p>
+<p><span class="math display">\[\begin{equation*}
+    \begin{bmatrix}
+    2 &amp; -3 &amp; 1\\
+    4 &amp; 3 &amp; 0\\
+    5 &amp; 2 &amp; -4
+    \end{bmatrix}
+    \begin{bmatrix}
+    0 &amp; 1 &amp; -2\\
+    1 &amp; 0 &amp; -1\\
+    2 &amp; 3 &amp; -2
+    \end{bmatrix}
+\end{equation*}\]</span></p>
+<div id="6bf812dc-0ab7-482e-a5b4-ce365b9f3777" class="cell" data-tags="[]" data-execution_count="11">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="op">%</span>autoreload <span class="dv">2</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>A <span class="op">=</span> np.array([[<span class="dv">2</span>,<span class="op">-</span><span class="dv">3</span>,<span class="dv">1</span>],[<span class="dv">4</span>,<span class="dv">3</span>,<span class="dv">0</span>],[<span class="dv">5</span>,<span class="dv">2</span>,<span class="op">-</span><span class="dv">4</span>]])</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>B <span class="op">=</span> np.array([[<span class="dv">0</span>,<span class="dv">1</span>,<span class="op">-</span><span class="dv">2</span>],[<span class="dv">1</span>,<span class="dv">0</span>,<span class="op">-</span><span class="dv">1</span>],[<span class="dv">2</span>,<span class="dv">3</span>,<span class="op">-</span><span class="dv">2</span>]])</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>C <span class="op">=</span> multiplicar_matrices(A,B)</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"El resultado de la multiplicación es: </span><span class="ch">\n</span><span class="st">"</span>,C)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>El resultado de la multiplicación es: 
+ [[ -1   5  -3]
+ [  3   4 -11]
+ [ -6  -7  -4]]</code></pre>
+</div>
+</div>
+<p> <span class="math display">\[\begin{equation*}
+    \begin{bmatrix}
+    2 &amp; 1 &amp; 2\\
+    -2 &amp; 3 &amp; 0\\
+    2 &amp; -1 &amp; 3
+    \end{bmatrix}
+    \begin{bmatrix}
+    1 &amp; -2 \\
+    -4 &amp; 1 \\
+    0 &amp; 2
+    \end{bmatrix}
+\end{equation*}\]</span></p>
+<div id="447ba0d2-663e-4a7c-96d8-737b9e98f5b6" class="cell" data-tags="[]" data-execution_count="13">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="op">%</span>autoreload <span class="dv">2</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>A <span class="op">=</span> np.array([[<span class="dv">2</span>,<span class="dv">1</span>,<span class="dv">2</span>],[<span class="op">-</span><span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">0</span>],[<span class="dv">2</span>,<span class="op">-</span><span class="dv">1</span>,<span class="dv">3</span>]])</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>B <span class="op">=</span> np.array([[<span class="dv">1</span>,<span class="op">-</span><span class="dv">2</span>],[<span class="op">-</span><span class="dv">4</span>,<span class="dv">1</span>],[<span class="dv">0</span>,<span class="dv">2</span>]])</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>C <span class="op">=</span> multiplicar_matrices(A,B)</span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"El resultado de la multiplicación es: </span><span class="ch">\n</span><span class="st">"</span>,C)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>El resultado de la multiplicación es: 
+ [[ -2   1]
+ [-14   7]
+ [  6   1]]</code></pre>
+</div>
+</div>
+<ol start="2" type="1">
+<li>Determine cuáles de las siguientes matrices son no singulares y calcule la inversa de esas matrices:</li>
+</ol>
+<p> <span class="math display">\[\begin{equation*}
+    \begin{bmatrix}
+    4 &amp; 2 &amp; 6\\
+    3 &amp; 0 &amp; 7\\
+    -2 &amp; -1 &amp; -3
+    \end{bmatrix}
+\end{equation*}\]</span></p>
+<div id="823f98ef-2032-4f56-af8a-bb3e50ce93f0" class="cell" data-tags="[]" data-execution_count="16">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="op">%</span>autoreload <span class="dv">2</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>A <span class="op">=</span> np.array([[<span class="dv">4</span>,<span class="dv">2</span>,<span class="dv">6</span>],[<span class="dv">3</span>,<span class="dv">0</span>,<span class="dv">7</span>],[<span class="op">-</span><span class="dv">2</span>,<span class="op">-</span><span class="dv">1</span>,<span class="op">-</span><span class="dv">3</span>]])</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>det <span class="op">=</span> determinante(A)</span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span>(det<span class="op">==</span><span class="dv">0</span>):</span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"El determinante es:"</span>,det, <span class="st">"</span><span class="ch">\n</span><span class="st">Por tanto, la matriz es singular y no posee inversa"</span>)</span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span>:</span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>    inv <span class="op">=</span> inversa(A)</span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"El determinante es:"</span>,det, <span class="st">"</span><span class="ch">\n</span><span class="st">Su matriz inversa es la siguiente:"</span>, inv)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>El determinante es: 0 
+Por tanto, la matriz es singular y no posee inversa</code></pre>
+</div>
+</div>
+<p></p>
+<p><span class="math display">\[\begin{equation*}
+    \begin{bmatrix}
+    1 &amp; 2 &amp; 0\\
+    2 &amp; 1 &amp; -1\\
+    3 &amp; 1 &amp; 1
+    \end{bmatrix}
+\end{equation*}\]</span></p>
+<div id="8a4ae2e0-160a-4f4e-a025-b25d91d59bfb" class="cell" data-tags="[]" data-execution_count="18">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="op">%</span>autoreload <span class="dv">2</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>A <span class="op">=</span> np.array([[<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">0</span>],[<span class="dv">2</span>,<span class="dv">1</span>,<span class="op">-</span><span class="dv">1</span>],[<span class="dv">3</span>,<span class="dv">1</span>,<span class="dv">1</span>]])</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>det <span class="op">=</span> determinante(A)</span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span>(det<span class="op">==</span><span class="dv">0</span>):</span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"El determinante es:"</span>,det, <span class="st">"</span><span class="ch">\n</span><span class="st">Por tanto, la matriz es singular y no posee inversa"</span>)</span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span>:</span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>    inv <span class="op">=</span> inversa(A)</span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"El determinante es:"</span>,det, <span class="st">"</span><span class="ch">\n</span><span class="st">Su matriz inversa es la siguiente:</span><span class="ch">\n</span><span class="st">"</span>, inv)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>El determinante es: -7.999999999999999 
+Su matriz inversa es la siguiente:
+ [[-0.25   0.25   0.25 ]
+ [ 0.625 -0.125 -0.125]
+ [ 0.125 -0.625  0.375]]</code></pre>
+</div>
+</div>
+<p> <span class="math display">\[\begin{equation*}
+    \begin{bmatrix}
+    1 &amp; 1 &amp; -1 &amp; 1\\
+    1 &amp; 2 &amp; -4 &amp; -2\\
+    2 &amp; 1 &amp; 1 &amp; 5 \\
+    -1 &amp; 0 &amp; -2 &amp; -4
+    \end{bmatrix}
+\end{equation*}\]</span></p>
+<div id="e25231d8-020f-4d7b-9fb7-09b5add74c11" class="cell" data-tags="[]" data-execution_count="20">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="op">%</span>autoreload <span class="dv">2</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>A <span class="op">=</span> np.array([[<span class="dv">1</span>,<span class="dv">1</span>,<span class="op">-</span><span class="dv">1</span>,<span class="dv">1</span>],[<span class="dv">1</span>,<span class="dv">2</span>,<span class="op">-</span><span class="dv">4</span>,<span class="op">-</span><span class="dv">2</span>],[<span class="dv">2</span>,<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">5</span>],[<span class="op">-</span><span class="dv">1</span>,<span class="dv">0</span>,<span class="op">-</span><span class="dv">2</span>,<span class="op">-</span><span class="dv">4</span>]])</span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>det <span class="op">=</span> determinante(A)</span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span>(det<span class="op">==</span><span class="dv">0</span>):</span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"El determinante es:"</span>,det, <span class="st">"</span><span class="ch">\n</span><span class="st">Por tanto, la matriz es singular y no posee inversa"</span>)</span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span>:</span>
+<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a>    inv <span class="op">=</span> inversa(A)</span>
+<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"El determinante es:"</span>,det, <span class="st">"</span><span class="ch">\n</span><span class="st">Su matriz inversa es la siguiente:"</span>, inv)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>El determinante es: 0 
+Por tanto, la matriz es singular y no posee inversa</code></pre>
+</div>
+</div>
+<p> <span class="math display">\[\begin{equation*}
+    \begin{bmatrix}
+    4 &amp; 0 &amp; 0 &amp; 0\\
+    6 &amp; 7 &amp; 0 &amp; 0\\
+    9 &amp; 11 &amp; 1 &amp; 0\\
+    5 &amp; 4 &amp; 1 &amp; 1
+    \end{bmatrix}
+\end{equation*}\]</span></p>
+<div id="d9d0b18b-3d32-46e0-ae5e-3fcd62a48cae" class="cell" data-tags="[]" data-execution_count="22">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="op">%</span>autoreload <span class="dv">2</span></span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>A <span class="op">=</span> np.array([[<span class="dv">4</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>],[<span class="dv">6</span>,<span class="dv">7</span>,<span class="dv">0</span>,<span class="dv">0</span>],[<span class="dv">9</span>,<span class="dv">11</span>,<span class="dv">1</span>,<span class="dv">0</span>],[<span class="dv">5</span>,<span class="dv">4</span>,<span class="dv">1</span>,<span class="dv">1</span>]])</span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>det <span class="op">=</span> determinante(A)</span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span>(det<span class="op">==</span><span class="dv">0</span>):</span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"El determinante es:"</span>,det, <span class="st">"</span><span class="ch">\n</span><span class="st">Por tanto, la matriz es singular y no posee inversa"</span>)</span>
+<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span>:</span>
+<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a>    inv <span class="op">=</span> inversa(A)</span>
+<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"El determinante es:"</span>,det, <span class="st">"</span><span class="ch">\n</span><span class="st">Su matriz inversa es la siguiente:</span><span class="ch">\n</span><span class="st">"</span>, inv)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>El determinante es: 27.999999999999993 
+Su matriz inversa es la siguiente:
+ [[ 0.25        0.          0.          0.        ]
+ [-0.21428571  0.14285714  0.          0.        ]
+ [ 0.10714286 -1.57142857  1.          0.        ]
+ [-0.5         1.         -1.          1.        ]]</code></pre>
+</div>
+</div>
+<ol start="3" type="1">
+<li>Resuelva los sistemas lineales 4 x 4 que tienen la misma matriz de coeficientes:</li>
+</ol>
+<p><span class="math display">\[\begin{eqnarray*} x_1-x_2+2x_3-x_4 = 6, \hspace{1cm} x_1-x_2+2x_3-x_4 =1, \\ x_1 \hspace{1.15cm}-x_3+x_4 = 4, \hspace{1cm} x_1\hspace{1.15cm} -x_3+x_4 = 1, \\ 2x_1+x_2+3x_3-4x_4 = -2, \hspace{0.6cm} 2x_1+x_2+3x_3-4x_4 = 2, \\
+   -x_2+x_3-x_4 = 5, \hspace{1.7cm} -x_2+x_3-x_4 = -1,
+\end{eqnarray*}\]</span></p>
+<p>Ya que ambos sistemas poseen la misma matriz de coeficientes <span class="math display">\[\begin{equation*}
+    A =
+    \begin{bmatrix}
+    1 &amp; -1 &amp; 2 &amp; -1\\
+    1 &amp; 0 &amp; -1 &amp; 1\\
+    2 &amp; 1 &amp; 3 &amp;-4\\
+    0 &amp; -1 &amp; 1 &amp; -1
+    \end{bmatrix}
+\end{equation*}\]</span> primero realizaré la descomposición LU para usarla posteriormente para resolver cada sistema.</p>
+<div id="82cec800-c3f6-4e65-8f3a-0f5c5016188a" class="cell" data-tags="[]" data-execution_count="25">
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="op">%</span>autoreload <span class="dv">2</span></span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>A <span class="op">=</span> [[<span class="dv">1</span>,<span class="op">-</span><span class="dv">1</span>,<span class="dv">2</span>,<span class="op">-</span><span class="dv">1</span>],[<span class="dv">1</span>,<span class="dv">0</span>,<span class="op">-</span><span class="dv">1</span>,<span class="dv">1</span>],[<span class="dv">2</span>,<span class="dv">1</span>,<span class="dv">3</span>,<span class="op">-</span><span class="dv">4</span>],[<span class="dv">0</span>,<span class="op">-</span><span class="dv">1</span>,<span class="dv">1</span>,<span class="op">-</span><span class="dv">1</span>]]</span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>L,U <span class="op">=</span> descomposicion_LU(A)</span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Matriz L:</span><span class="ch">\n</span><span class="st">"</span>,L)</span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Matriz U:</span><span class="ch">\n</span><span class="st">"</span>,U)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Matriz L:
+ [[ 1.    0.    0.    0.  ]
+ [ 1.    1.    0.    0.  ]
+ [ 2.    3.    1.    0.  ]
+ [ 0.   -1.   -0.25  1.  ]]
+Matriz U:
+ [[ 1. -1.  2. -1.]
+ [ 0.  1. -3.  2.]
+ [ 0.  0.  8. -8.]
+ [ 0.  0.  0. -1.]]</code></pre>
+</div>
+</div>
+<div id="cd93535c-d6a8-4878-b05f-ae1513c87c5a" class="cell" data-tags="[]" data-execution_count="26">
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="op">%</span>autoreload <span class="dv">2</span></span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>b_1 <span class="op">=</span> [<span class="dv">6</span>,<span class="dv">4</span>,<span class="op">-</span><span class="dv">2</span>,<span class="dv">5</span>]</span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>sol_1 <span class="op">=</span> resolver_LU(L,U,b_1)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Calculando y
+y
+[ 6. -2. -8.  1.]
+Verificación Ly=b:
+[ 6.  4. -2.  5.]
+Calculando x
+x
+[ 3. -6. -2. -1.]
+Verificación Ux=y:
+[ 6. -2. -8.  1.]</code></pre>
+</div>
+</div>
+<div id="e88959c8-eb05-4105-aa5e-23ecbc0fda0d" class="cell" data-tags="[]" data-execution_count="27">
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="op">%</span>autoreload <span class="dv">2</span></span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>b_2 <span class="op">=</span> [<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">2</span>,<span class="op">-</span><span class="dv">1</span>]</span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>sol_2 <span class="op">=</span> resolver_LU(L,U,b_2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Calculando y
+y
+[ 1.  0.  0. -1.]
+Verificación Ly=b:
+[ 1.  1.  2. -1.]
+Calculando x
+x
+[1. 1. 1. 1.]
+Verificación Ux=y:
+[ 1.  0.  0. -1.]</code></pre>
+</div>
+</div>
+<p>Por tanto, la soluciones obtenidas son: <span class="math inline">\(sol_1 = [3,-6,-2,-1]\)</span> y <span class="math inline">\(sol_2 = [1,1,1,1]\)</span></p>
+<ol start="4" type="1">
+<li>Encuentre los valores de A que hacen que la siguiente matriz sea singular</li>
+</ol>
+<p><span class="math display">\[\begin{equation*}
+    A=
+    \begin{bmatrix}
+        1 &amp; -1 &amp; \alpha\\
+        2 &amp; 2 &amp; 1\\
+        0 &amp; \alpha &amp; -\dfrac{3}{2}
+    \end{bmatrix}
+\end{equation*}\]</span></p>
+</section>
+<section id="determinante-de-la-matriz-a" class="level3">
+<h3 class="anchored" data-anchor-id="determinante-de-la-matriz-a">Determinante de la matriz A</h3>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="Deber10_Leandro_Bravo_files/figure-html/375f73dd-1379-4e98-a503-dd13376699bd-2-5c3ecadd-04ee-4c19-b2ad-3fad005c1294.png" class="img-fluid figure-img"></p>
+<figcaption>image.png</figcaption>
+</figure>
+</div>
+</section>
+<section id="para-que-cumpla" class="level3">
+<h3 class="anchored" data-anchor-id="para-que-cumpla">Para que cumpla</h3>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="Deber10_Leandro_Bravo_files/figure-html/375f73dd-1379-4e98-a503-dd13376699bd-1-2a270f80-9afd-441c-b47f-ca4f3c35567d.png" class="img-fluid figure-img"></p>
+<figcaption>image.png</figcaption>
+</figure>
+</div>
+<ol start="5" type="1">
+<li>Resuelva los siguientes sistemas lineales:</li>
+</ol>
+<p> <span class="math display">\[\begin{equation*}
+    \begin{bmatrix}
+        1 &amp; 0 &amp; 0 \\
+        2 &amp; 1 &amp; 0\\
+        -1 &amp; 0 &amp; 1
+    \end{bmatrix}
+    \begin{bmatrix}
+        2 &amp; 3 &amp; -1\\
+        0 &amp; -2 &amp; 1\\
+        0 &amp; 0 &amp; 3
+    \end{bmatrix}
+    \begin{bmatrix}
+        x_1 \\
+        x_2 \\
+        x_3
+    \end{bmatrix} =
+    \begin{bmatrix}
+        2 \\
+        -1 \\
+        1
+    \end{bmatrix}
+\end{equation*}\]</span></p>
+<div id="cb3770f4-7af5-4f28-bf94-2e0fd8c48a15" class="cell" data-tags="[]" data-execution_count="34">
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="op">%</span>autoreload <span class="dv">2</span></span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>L <span class="op">=</span> np.array([[<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">0</span>],[<span class="dv">2</span>,<span class="dv">1</span>,<span class="dv">0</span>],[<span class="op">-</span><span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">1</span>]])</span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>U <span class="op">=</span> np.array([[<span class="dv">2</span>,<span class="dv">3</span>,<span class="op">-</span><span class="dv">1</span>],[<span class="dv">0</span>,<span class="op">-</span><span class="dv">2</span>,<span class="dv">1</span>],[<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">3</span>]])</span>
+<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a>b <span class="op">=</span> [<span class="dv">2</span>,<span class="op">-</span><span class="dv">1</span>,<span class="dv">1</span>]</span>
+<span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a>resolver_LU(L,U,b)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Calculando y
+y
+[ 2. -5.  3.]
+Verificación Ly=b:
+[ 2. -1.  1.]
+Calculando x
+x
+[-3.  3.  1.]
+Verificación Ux=y:
+[ 2. -5.  3.]</code></pre>
+</div>
+</div>
+<p>Por tanto, la solución es: <span class="math display">\[\begin{equation*}
+    \begin{bmatrix}
+        x_1 \\
+        x_2 \\
+        x_3
+    \end{bmatrix} =
+    \begin{bmatrix}
+        -3 \\
+        3 \\
+        1
+    \end{bmatrix}
+\end{equation*}\]</span></p>
+<p> <span class="math display">\[\begin{equation*}
+    \begin{bmatrix}
+        2 &amp; 0 &amp; 0 \\
+        -1 &amp; 1 &amp; 0\\
+        3 &amp; 2 &amp; -1
+    \end{bmatrix}
+    \begin{bmatrix}
+        1 &amp; 1 &amp; 1\\
+        0 &amp; 1 &amp; 2\\
+        0 &amp; 0 &amp; 1
+    \end{bmatrix}
+    \begin{bmatrix}
+        x_1 \\
+        x_2 \\
+        x_3
+    \end{bmatrix} =
+    \begin{bmatrix}
+        -1 \\
+        3 \\
+        0
+    \end{bmatrix}
+\end{equation*}\]</span></p>
+<div id="66e69404-a8be-4937-a4e5-e132f124f1ac" class="cell" data-tags="[]" data-execution_count="37">
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="op">%</span>autoreload <span class="dv">2</span></span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>L <span class="op">=</span> np.array([[<span class="dv">2</span>,<span class="dv">0</span>,<span class="dv">0</span>],[<span class="op">-</span><span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">0</span>],[<span class="dv">3</span>,<span class="dv">2</span>,<span class="op">-</span><span class="dv">1</span>]])</span>
+<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a>U <span class="op">=</span> np.array([[<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">1</span>],[<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">2</span>],[<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">1</span>]])</span>
+<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a>b <span class="op">=</span> [<span class="op">-</span><span class="dv">1</span>,<span class="dv">3</span>,<span class="dv">0</span>]</span>
+<span id="cb26-5"><a href="#cb26-5" aria-hidden="true" tabindex="-1"></a>resolver_LU(L,U,b)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Calculando y
+y
+[-0.5  2.5  3.5]
+Verificación Ly=b:
+[-1.  3.  0.]
+Calculando x
+x
+[ 0.5 -4.5  3.5]
+Verificación Ux=y:
+[-0.5  2.5  3.5]</code></pre>
+</div>
+</div>
+<p>Por tanto, la solución es: <span class="math display">\[\begin{equation*}
+    \begin{bmatrix}
+        x_1 \\
+        x_2 \\
+        x_3
+    \end{bmatrix} =
+    \begin{bmatrix}
+        0.5 \\
+        -4.5 \\
+        3.5
+    \end{bmatrix}
+\end{equation*}\]</span></p>
+<ol start="6" type="1">
+<li>Factorice las siguientes matrices en la descomposición LU mediante el algoritmo de factorización LU con <span class="math inline">\(l_{ii} = 1\)</span> para todas las i.</li>
+</ol>
+<p> <span class="math display">\[\begin{equation*}
+    \begin{bmatrix}
+    2 &amp; -1 &amp; 1\\
+    3 &amp; 3 &amp; 9\\
+    3 &amp; 3 &amp; 5
+    \end{bmatrix}
+\end{equation*}\]</span></p>
+<div id="581edeea-a498-4222-80f2-7d0a79f3e2ae" class="cell" data-tags="[]" data-execution_count="41">
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="op">%</span>autoreload <span class="dv">2</span></span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>A <span class="op">=</span> [[<span class="dv">2</span>,<span class="op">-</span><span class="dv">1</span>,<span class="dv">1</span>],[<span class="dv">3</span>,<span class="dv">3</span>,<span class="dv">9</span>],[<span class="dv">3</span>,<span class="dv">3</span>,<span class="dv">5</span>]]</span>
+<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a>L,U <span class="op">=</span> descomposicion_LU(A)</span>
+<span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Matriz L:</span><span class="ch">\n</span><span class="st">"</span>,L)</span>
+<span id="cb28-5"><a href="#cb28-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Matriz U:</span><span class="ch">\n</span><span class="st">"</span>,U)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Matriz L:
+ [[1.  0.  0. ]
+ [1.5 1.  0. ]
+ [1.5 1.  1. ]]
+Matriz U:
+ [[ 2.  -1.   1. ]
+ [ 0.   4.5  7.5]
+ [ 0.   0.  -4. ]]</code></pre>
+</div>
+</div>
+<p> <span class="math display">\[\begin{equation*}
+    \begin{bmatrix}
+    1.012 &amp; -2.132 &amp; 3.104\\
+    -2.132 &amp; 4.096 &amp; -7.013\\
+    3.104 &amp; -7.013 &amp; 0.014
+    \end{bmatrix}
+\end{equation*}\]</span></p>
+<div id="48d82970-8b27-472e-924d-682d8c2c54cb" class="cell" data-tags="[]" data-execution_count="43">
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="op">%</span>autoreload <span class="dv">2</span></span>
+<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a>B <span class="op">=</span> [[<span class="fl">1.012</span>,<span class="op">-</span><span class="fl">2.132</span>,<span class="fl">3.104</span>],[<span class="op">-</span><span class="fl">2.132</span>,<span class="fl">4.096</span>,<span class="op">-</span><span class="fl">7.013</span>],[<span class="fl">3.104</span>,<span class="op">-</span><span class="fl">7.013</span>,<span class="fl">0.014</span>]]</span>
+<span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a>L,U <span class="op">=</span> descomposicion_LU(B)</span>
+<span id="cb30-4"><a href="#cb30-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Matriz L:</span><span class="ch">\n</span><span class="st">"</span>,L)</span>
+<span id="cb30-5"><a href="#cb30-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Matriz U:</span><span class="ch">\n</span><span class="st">"</span>,U)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Matriz L:
+ [[ 1.          0.          0.        ]
+ [-2.10671937  1.          0.        ]
+ [ 3.06719368  1.19775553  1.        ]]
+Matriz U:
+ [[ 1.012      -2.132       3.104     ]
+ [ 0.         -0.39552569 -0.47374308]
+ [ 0.          0.         -8.93914077]]</code></pre>
+</div>
+</div>
+<p> <span class="math display">\[\begin{equation*}
+    \begin{bmatrix}
+    2 &amp; 0 &amp; 0 &amp; 0\\
+    1 &amp; 1.5 &amp; 0 &amp; 0\\
+    0 &amp; -3 &amp; 0.5 &amp; 0\\
+    2 &amp; -2 &amp; 1 &amp; 1
+    \end{bmatrix}
+\end{equation*}\]</span></p>
+<div id="ba94521c-59f0-4f47-91aa-8a9a161f2fd4" class="cell" data-tags="[]" data-execution_count="45">
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="op">%</span>autoreload <span class="dv">2</span></span>
+<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a>C <span class="op">=</span> [[<span class="dv">2</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>],[<span class="dv">1</span>,<span class="fl">1.5</span>,<span class="dv">0</span>,<span class="dv">0</span>],[<span class="dv">0</span>,<span class="op">-</span><span class="dv">3</span>,<span class="fl">0.5</span>,<span class="dv">0</span>],[<span class="dv">2</span>,<span class="op">-</span><span class="dv">2</span>,<span class="dv">1</span>,<span class="dv">1</span>]]</span>
+<span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a>L,U <span class="op">=</span> descomposicion_LU(C)</span>
+<span id="cb32-4"><a href="#cb32-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Matriz L:</span><span class="ch">\n</span><span class="st">"</span>,L)</span>
+<span id="cb32-5"><a href="#cb32-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Matriz U:</span><span class="ch">\n</span><span class="st">"</span>,U)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Matriz L:
+ [[ 1.          0.          0.          0.        ]
+ [ 0.5         1.          0.          0.        ]
+ [ 0.         -2.          1.          0.        ]
+ [ 1.         -1.33333333  2.          1.        ]]
+Matriz U:
+ [[2.  0.  0.  0. ]
+ [0.  1.5 0.  0. ]
+ [0.  0.  0.5 0. ]
+ [0.  0.  0.  1. ]]</code></pre>
+</div>
+</div>
+<p> <span class="math display">\[\begin{equation*}
+    \begin{bmatrix}
+    2.1756 &amp; 4.0231 &amp; -2.1732 &amp; 5.1967\\
+    -4.0231 &amp; 6.0000 &amp; 0 &amp; 1.1973\\
+    -1.0000 &amp; -5.2107 &amp; 1.1111 &amp; 0\\
+    6.0235 &amp; 7.0000 &amp; 0 &amp; -4.1561
+    \end{bmatrix}
+\end{equation*}\]</span></p>
+<div id="4c102a91-6a6d-4b6c-980b-1e5d559d0076" class="cell" data-tags="[]" data-execution_count="47">
+<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="op">%</span>autoreload <span class="dv">2</span></span>
+<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a>D <span class="op">=</span> [[<span class="fl">2.1756</span>,<span class="fl">4.0231</span>,<span class="op">-</span><span class="fl">2.1732</span>,<span class="fl">5.1967</span>],[<span class="op">-</span><span class="fl">4.0231</span>,<span class="fl">6.0000</span>,<span class="dv">0</span>,<span class="fl">1.1973</span>],</span>
+<span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a>     [<span class="op">-</span><span class="fl">1.0000</span>,<span class="op">-</span><span class="fl">5.2107</span>,<span class="fl">1.1111</span>,<span class="dv">0</span>],[<span class="fl">6.0235</span>,<span class="fl">7.0000</span>,<span class="dv">0</span>,<span class="op">-</span><span class="fl">4.1561</span>]]</span>
+<span id="cb34-4"><a href="#cb34-4" aria-hidden="true" tabindex="-1"></a>L,U <span class="op">=</span> descomposicion_LU(D)</span>
+<span id="cb34-5"><a href="#cb34-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Matriz L:</span><span class="ch">\n</span><span class="st">"</span>,L)</span>
+<span id="cb34-6"><a href="#cb34-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Matriz U:</span><span class="ch">\n</span><span class="st">"</span>,U)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Matriz L:
+ [[ 1.          0.          0.          0.        ]
+ [-1.84919103  1.          0.          0.        ]
+ [-0.45964332 -0.25012194  1.          0.        ]
+ [ 2.76866152 -0.30794361 -5.35228302  1.        ]]
+Matriz U:
+ [[ 2.17560000e+00  4.02310000e+00 -2.17320000e+00  5.19670000e+00]
+ [ 0.00000000e+00  1.34394804e+01 -4.01866194e+00  1.08069910e+01]
+ [ 0.00000000e+00  4.44089210e-16 -8.92952394e-01  5.09169403e+00]
+ [ 0.00000000e+00  0.00000000e+00  0.00000000e+00  1.20361280e+01]]</code></pre>
+</div>
+</div>
+<ol start="7" type="1">
+<li>Modifique el algoritmo de eliminación gaussiana de tal forma que se pueda utilizar para resolver un sistema lineal usando la descomposición LU y, a continuación, resuelva los siguientes sistemas lineales.</li>
+</ol>
+<p> <span class="math display">\[\begin{eqnarray*} 2x_1-x_2+x_3=-1, \\ 3x_1+3x_2+9x_3=0, \\ 3x_1+3x_2+5x_3 = 4 \end{eqnarray*}\]</span></p>
+<div id="2604291b-15e1-402e-bffb-ef94fe5d6ef7" class="cell" data-tags="[]" data-execution_count="50">
+<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="op">%</span>autoreload <span class="dv">2</span></span>
+<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a>A <span class="op">=</span> [[<span class="dv">2</span>,<span class="op">-</span><span class="dv">1</span>,<span class="dv">1</span>],[<span class="dv">3</span>,<span class="dv">3</span>,<span class="dv">9</span>],[<span class="dv">3</span>,<span class="dv">3</span>,<span class="dv">5</span>]]</span>
+<span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a>b <span class="op">=</span> [<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">4</span>]</span>
+<span id="cb36-4"><a href="#cb36-4" aria-hidden="true" tabindex="-1"></a>L,U <span class="op">=</span> descomposicion_LU(A)</span>
+<span id="cb36-5"><a href="#cb36-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">Matriz L:</span><span class="ch">\n</span><span class="st">"</span>,L)</span>
+<span id="cb36-6"><a href="#cb36-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">Matriz U:</span><span class="ch">\n</span><span class="st">"</span>,U)</span>
+<span id="cb36-7"><a href="#cb36-7" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> eliminacion_gaussiana_L(L,b)</span>
+<span id="cb36-8"><a href="#cb36-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">Valor de y:"</span>, y,<span class="st">"</span><span class="ch">\n</span><span class="st">"</span>)</span>
+<span id="cb36-9"><a href="#cb36-9" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> eliminacion_gaussiana_U(U,y)</span>
+<span id="cb36-10"><a href="#cb36-10" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">Valor de la solución x:"</span>, x)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Matriz L:
+ [[1.  0.  0. ]
+ [1.5 1.  0. ]
+ [1.5 1.  1. ]]
+
+Matriz U:
+ [[ 2.  -1.   1. ]
+ [ 0.   4.5  7.5]
+ [ 0.   0.  -4. ]]
+
+[[ 1.   0.   0.   1. ]
+ [ 0.   1.   0.  -1.5]
+ [ 1.5  1.   1.   4. ]]
+
+[[ 1.   0.   0.   1. ]
+ [ 0.   1.   0.  -1.5]
+ [ 0.   1.   1.   2.5]]
+
+[[ 1.   0.   0.   1. ]
+ [ 0.   1.   0.  -1.5]
+ [ 0.   0.   1.   4. ]]
+
+Valor de y: [ 1.  -1.5  4. ] 
+
+[[ 2.  -1.   1.   1. ]
+ [ 0.   4.5  7.5 -1.5]
+ [ 0.   0.  -4.   4. ]]
+
+[[ 2.  -1.   1.   1. ]
+ [ 0.   4.5  0.   6. ]
+ [ 0.   0.  -4.   4. ]]
+
+[[ 2.  -1.   0.   2. ]
+ [ 0.   4.5  0.   6. ]
+ [ 0.   0.  -4.   4. ]]
+
+[[ 2.          0.          0.          3.33333333]
+ [ 0.          4.5         0.          6.        ]
+ [ 0.          0.         -4.          4.        ]]
+
+Valor de la solución x: [ 1.6666666  1.3333334 -1.       ]</code></pre>
+</div>
+</div>
+<p> <span class="math display">\[\begin{eqnarray*} 1.012x_1-2.132x_2+3.104x_3=1.984, \\ -2.132x_1+4.096x_2+-7.013x_3=-5.049, \\ 3.104x_1-7.013x_2+0.014x_3 = -3.895  \end{eqnarray*}\]</span></p>
+<div id="63cdf079-c4c8-46f2-8fbd-1fad298145ca" class="cell" data-tags="[]" data-execution_count="52">
+<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="op">%</span>autoreload <span class="dv">2</span></span>
+<span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a>A <span class="op">=</span> [[<span class="fl">1.012</span>,<span class="op">-</span><span class="fl">2.132</span>,<span class="fl">3.104</span>],[<span class="op">-</span><span class="fl">2.132</span>,<span class="fl">4.096</span>,<span class="op">-</span><span class="fl">7.013</span>],[<span class="fl">3.104</span>,<span class="op">-</span><span class="fl">7.013</span>,<span class="fl">0.014</span>]]</span>
+<span id="cb38-3"><a href="#cb38-3" aria-hidden="true" tabindex="-1"></a>b <span class="op">=</span> [<span class="fl">1.984</span>,<span class="op">-</span><span class="fl">5.049</span>,<span class="op">-</span><span class="fl">3.895</span>]</span>
+<span id="cb38-4"><a href="#cb38-4" aria-hidden="true" tabindex="-1"></a>L,U <span class="op">=</span> descomposicion_LU(A)</span>
+<span id="cb38-5"><a href="#cb38-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">Matriz L:</span><span class="ch">\n</span><span class="st">"</span>,L)</span>
+<span id="cb38-6"><a href="#cb38-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">Matriz U:</span><span class="ch">\n</span><span class="st">"</span>,U)</span>
+<span id="cb38-7"><a href="#cb38-7" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> eliminacion_gaussiana_L(L,b)</span>
+<span id="cb38-8"><a href="#cb38-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">Valor de y:"</span>, y,<span class="st">"</span><span class="ch">\n</span><span class="st">"</span>)</span>
+<span id="cb38-9"><a href="#cb38-9" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> eliminacion_gaussiana_U(U,y)</span>
+<span id="cb38-10"><a href="#cb38-10" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">Valor de la solución x:"</span>, x)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Matriz L:
+ [[ 1.          0.          0.        ]
+ [-2.10671937  1.          0.        ]
+ [ 3.06719368  1.19775553  1.        ]]
+
+Matriz U:
+ [[ 1.012      -2.132       3.104     ]
+ [ 0.         -0.39552569 -0.47374308]
+ [ 0.          0.         -8.93914077]]
+
+[[ 1.          0.          0.          1.984     ]
+ [ 0.          1.          0.         -0.86926877]
+ [ 3.06719368  1.19775553  1.         -3.895     ]]
+
+[[ 1.          0.          0.          1.984     ]
+ [ 0.          1.          0.         -0.86926877]
+ [ 0.          1.19775553  1.         -9.98031225]]
+
+[[ 1.          0.          0.          1.984     ]
+ [ 0.          1.          0.         -0.86926877]
+ [ 0.          0.          1.         -8.93914077]]
+
+Valor de y: [ 1.984     -0.8692688 -8.93914  ] 
+
+[[ 1.012      -2.132       3.104       1.98399997]
+ [ 0.         -0.39552569 -0.47374308 -0.86926877]
+ [ 0.          0.         -8.93914077 -8.93914032]]
+
+[[ 1.012      -2.132       3.104       1.98399997]
+ [ 0.         -0.39552569  0.         -0.39552572]
+ [ 0.          0.         -8.93914077 -8.93914032]]
+
+[[ 1.012      -2.132       0.         -1.11999987]
+ [ 0.         -0.39552569  0.         -0.39552572]
+ [ 0.          0.         -8.93914077 -8.93914032]]
+
+[[ 1.012       0.          0.          1.01200026]
+ [ 0.         -0.39552569  0.         -0.39552572]
+ [ 0.          0.         -8.93914077 -8.93914032]]
+
+Valor de la solución x: [1.0000002  1.0000001  0.99999994]</code></pre>
+</div>
+</div>
+<p> <span class="math display">\[\begin{eqnarray*} 2x_1 \hspace{3.6cm} = 3, \\ x_1+1.5x_2\hspace{2.3cm}=4.5, \\ \hspace{1cm}-3x_2+0.5x_3 \hspace{0.7cm} = -6.6, \\ 2x_1-2x_2+\hspace{0.5cm}x_3+x_4 = 0.8\end{eqnarray*}\]</span></p>
+<div id="d05046ee-8b02-43ec-859a-76430116af07" class="cell" data-tags="[]" data-execution_count="54">
+<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="op">%</span>autoreload <span class="dv">2</span></span>
+<span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a>A <span class="op">=</span> [[<span class="dv">2</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>],[<span class="dv">1</span>,<span class="fl">1.5</span>,<span class="dv">0</span>,<span class="dv">0</span>],[<span class="dv">0</span>,<span class="op">-</span><span class="dv">3</span>,<span class="fl">0.5</span>,<span class="dv">0</span>],[<span class="dv">2</span>,<span class="op">-</span><span class="dv">2</span>,<span class="dv">1</span>,<span class="dv">1</span>]]</span>
+<span id="cb40-3"><a href="#cb40-3" aria-hidden="true" tabindex="-1"></a>b <span class="op">=</span> [<span class="dv">3</span>,<span class="fl">4.5</span>,<span class="op">-</span><span class="fl">6.6</span>,<span class="fl">0.8</span>]</span>
+<span id="cb40-4"><a href="#cb40-4" aria-hidden="true" tabindex="-1"></a>L,U <span class="op">=</span> descomposicion_LU(A)</span>
+<span id="cb40-5"><a href="#cb40-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">Matriz L:</span><span class="ch">\n</span><span class="st">"</span>,L)</span>
+<span id="cb40-6"><a href="#cb40-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">Matriz U:</span><span class="ch">\n</span><span class="st">"</span>,U)</span>
+<span id="cb40-7"><a href="#cb40-7" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> eliminacion_gaussiana_L(L,b)</span>
+<span id="cb40-8"><a href="#cb40-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">Valor de y:"</span>, y,<span class="st">"</span><span class="ch">\n</span><span class="st">"</span>)</span>
+<span id="cb40-9"><a href="#cb40-9" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> eliminacion_gaussiana_U(U,y)</span>
+<span id="cb40-10"><a href="#cb40-10" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">Valor de la solución x:"</span>, x)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Matriz L:
+ [[ 1.          0.          0.          0.        ]
+ [ 0.5         1.          0.          0.        ]
+ [ 0.         -2.          1.          0.        ]
+ [ 1.         -1.33333333  2.          1.        ]]
+
+Matriz U:
+ [[2.  0.  0.  0. ]
+ [0.  1.5 0.  0. ]
+ [0.  0.  0.5 0. ]
+ [0.  0.  0.  1. ]]
+
+[[ 1.          0.          0.          0.          3.        ]
+ [ 0.          1.          0.          0.          3.        ]
+ [ 0.         -2.          1.          0.         -6.6       ]
+ [ 1.         -1.33333333  2.          1.          0.8       ]]
+
+[[ 1.          0.          0.          0.          3.        ]
+ [ 0.          1.          0.          0.          3.        ]
+ [ 0.         -2.          1.          0.         -6.6       ]
+ [ 1.         -1.33333333  2.          1.          0.8       ]]
+
+[[ 1.          0.          0.          0.          3.        ]
+ [ 0.          1.          0.          0.          3.        ]
+ [ 0.         -2.          1.          0.         -6.6       ]
+ [ 0.         -1.33333333  2.          1.         -2.2       ]]
+
+[[ 1.          0.          0.          0.          3.        ]
+ [ 0.          1.          0.          0.          3.        ]
+ [ 0.          0.          1.          0.         -0.6       ]
+ [ 0.         -1.33333333  2.          1.         -2.2       ]]
+
+[[ 1.   0.   0.   0.   3. ]
+ [ 0.   1.   0.   0.   3. ]
+ [ 0.   0.   1.   0.  -0.6]
+ [ 0.   0.   2.   1.   1.8]]
+
+[[ 1.   0.   0.   0.   3. ]
+ [ 0.   1.   0.   0.   3. ]
+ [ 0.   0.   1.   0.  -0.6]
+ [ 0.   0.   0.   1.   3. ]]
+
+Valor de y: [ 3.   3.  -0.6  3. ] 
+
+[[ 2.          0.          0.          0.          3.        ]
+ [ 0.          1.5         0.          0.          3.        ]
+ [ 0.          0.          0.5         0.         -0.60000002]
+ [ 0.          0.          0.          1.          3.        ]]
+
+[[ 2.          0.          0.          0.          3.        ]
+ [ 0.          1.5         0.          0.          3.        ]
+ [ 0.          0.          0.5         0.         -0.60000002]
+ [ 0.          0.          0.          1.          3.        ]]
+
+[[ 2.          0.          0.          0.          3.        ]
+ [ 0.          1.5         0.          0.          3.        ]
+ [ 0.          0.          0.5         0.         -0.60000002]
+ [ 0.          0.          0.          1.          3.        ]]
+
+[[ 2.          0.          0.          0.          3.        ]
+ [ 0.          1.5         0.          0.          3.        ]
+ [ 0.          0.          0.5         0.         -0.60000002]
+ [ 0.          0.          0.          1.          3.        ]]
+
+[[ 2.          0.          0.          0.          3.        ]
+ [ 0.          1.5         0.          0.          3.        ]
+ [ 0.          0.          0.5         0.         -0.60000002]
+ [ 0.          0.          0.          1.          3.        ]]
+
+[[ 2.          0.          0.          0.          3.        ]
+ [ 0.          1.5         0.          0.          3.        ]
+ [ 0.          0.          0.5         0.         -0.60000002]
+ [ 0.          0.          0.          1.          3.        ]]
+
+[[ 2.          0.          0.          0.          3.        ]
+ [ 0.          1.5         0.          0.          3.        ]
+ [ 0.          0.          0.5         0.         -0.60000002]
+ [ 0.          0.          0.          1.          3.        ]]
+
+Valor de la solución x: [ 1.5  2.  -1.2  3. ]</code></pre>
+</div>
+</div>
+<p> <span class="math display">\[\begin{eqnarray*} 2.1756x_1+4.0231x_2-2.1732x_3+5.1967x_4=17.102, \\ -4.0231x_1+6.0000x_2\hspace{1cm}+1.1973x_4=-6.1593, \\ -1.0000x_1-5.2107x_2+1.1111x_3 \hspace{1cm} = 3.0004, \\ 6.0235x_1+7.0000x_2+\hspace{1cm}-4.1561x_4 = 0.0000\end{eqnarray*}\]</span> $</p>
+<div id="6f300037-c139-43a9-8986-52fecf756eb2" class="cell" data-tags="[]" data-execution_count="56">
+<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="op">%</span>autoreload <span class="dv">2</span></span>
+<span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a>A <span class="op">=</span> [[<span class="fl">2.1756</span>,<span class="fl">4.0231</span>,<span class="op">-</span><span class="fl">2.1732</span>,<span class="fl">5.1967</span>],[<span class="op">-</span><span class="fl">4.0231</span>,<span class="fl">6.0000</span>,<span class="dv">0</span>,<span class="fl">1.1973</span>],[<span class="op">-</span><span class="dv">1</span>,<span class="op">-</span><span class="fl">5.2107</span>,<span class="fl">1.1111</span>,<span class="dv">0</span>],[<span class="fl">6.0235</span>,<span class="fl">7.0000</span>,<span class="dv">0</span>,<span class="op">-</span><span class="fl">4.1561</span>]]</span>
+<span id="cb42-3"><a href="#cb42-3" aria-hidden="true" tabindex="-1"></a>b <span class="op">=</span> [<span class="fl">17.102</span>,<span class="op">-</span><span class="fl">6.1593</span>,<span class="fl">3.0004</span>,<span class="fl">0.0000</span>]</span>
+<span id="cb42-4"><a href="#cb42-4" aria-hidden="true" tabindex="-1"></a>L,U <span class="op">=</span> descomposicion_LU(A)</span>
+<span id="cb42-5"><a href="#cb42-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">Matriz L:</span><span class="ch">\n</span><span class="st">"</span>,L)</span>
+<span id="cb42-6"><a href="#cb42-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">Matriz U:</span><span class="ch">\n</span><span class="st">"</span>,U)</span>
+<span id="cb42-7"><a href="#cb42-7" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> eliminacion_gaussiana_L(L,b)</span>
+<span id="cb42-8"><a href="#cb42-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">Valor de y:"</span>, y,<span class="st">"</span><span class="ch">\n</span><span class="st">"</span>)</span>
+<span id="cb42-9"><a href="#cb42-9" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> eliminacion_gaussiana_U(U,y)</span>
+<span id="cb42-10"><a href="#cb42-10" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">Valor de la solución x:"</span>, x)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Matriz L:
+ [[ 1.          0.          0.          0.        ]
+ [-1.84919103  1.          0.          0.        ]
+ [-0.45964332 -0.25012194  1.          0.        ]
+ [ 2.76866152 -0.30794361 -5.35228302  1.        ]]
+
+Matriz U:
+ [[ 2.17560000e+00  4.02310000e+00 -2.17320000e+00  5.19670000e+00]
+ [ 0.00000000e+00  1.34394804e+01 -4.01866194e+00  1.08069910e+01]
+ [ 0.00000000e+00  4.44089210e-16 -8.92952394e-01  5.09169403e+00]
+ [ 0.00000000e+00  0.00000000e+00  0.00000000e+00  1.20361280e+01]]
+
+[[ 1.          0.          0.          0.         17.102     ]
+ [ 0.          1.          0.          0.         25.46556496]
+ [-0.45964332 -0.25012194  1.          0.          3.0004    ]
+ [ 2.76866152 -0.30794361 -5.35228302  1.          0.        ]]
+
+[[ 1.          0.          0.          0.         17.102     ]
+ [ 0.          1.          0.          0.         25.46556496]
+ [ 0.         -0.25012194  1.          0.         10.86122   ]
+ [ 2.76866152 -0.30794361 -5.35228302  1.          0.        ]]
+
+[[  1.           0.           0.           0.          17.102     ]
+ [  0.           1.           0.           0.          25.46556496]
+ [  0.          -0.25012194   1.           0.          10.86122   ]
+ [  0.          -0.30794361  -5.35228302   1.         -47.34964929]]
+
+[[  1.           0.           0.           0.          17.102     ]
+ [  0.           1.           0.           0.          25.46556496]
+ [  0.           0.           1.           0.          17.23071662]
+ [  0.          -0.30794361  -5.35228302   1.         -47.34964929]]
+
+[[  1.           0.           0.           0.          17.102     ]
+ [  0.           1.           0.           0.          25.46556496]
+ [  0.           0.           1.           0.          17.23071662]
+ [  0.           0.          -5.35228302   1.         -39.50769122]]
+
+[[ 1.          0.          0.          0.         17.102     ]
+ [ 0.          1.          0.          0.         25.46556496]
+ [ 0.          0.          1.          0.         17.23071662]
+ [ 0.          0.          0.          1.         52.71598078]]
+
+Valor de y: [17.102    25.465565 17.230717 52.71598 ] 
+
+[[ 2.17560000e+00  4.02310000e+00 -2.17320000e+00  5.19670000e+00
+   1.71019993e+01]
+ [ 0.00000000e+00  1.34394804e+01 -4.01866194e+00  1.08069910e+01
+   2.54655647e+01]
+ [ 0.00000000e+00  4.44089210e-16 -8.92952394e-01  5.09169403e+00
+   1.72307167e+01]
+ [ 0.00000000e+00  0.00000000e+00  0.00000000e+00  1.20361280e+01
+   5.27159805e+01]]
+
+[[ 2.17560000e+00  4.02310000e+00 -2.17320000e+00  5.19670000e+00
+   1.71019993e+01]
+ [ 0.00000000e+00  1.34394804e+01 -4.01866194e+00  1.08069910e+01
+   2.54655647e+01]
+ [ 0.00000000e+00  4.44089210e-16 -8.92952394e-01  0.00000000e+00
+  -5.06994697e+00]
+ [ 0.00000000e+00  0.00000000e+00  0.00000000e+00  1.20361280e+01
+   5.27159805e+01]]
+
+[[ 2.17560000e+00  4.02310000e+00 -2.17320000e+00  5.19670000e+00
+   1.71019993e+01]
+ [ 0.00000000e+00  1.34394804e+01 -4.01866194e+00  0.00000000e+00
+  -2.18670265e+01]
+ [ 0.00000000e+00  4.44089210e-16 -8.92952394e-01  0.00000000e+00
+  -5.06994697e+00]
+ [ 0.00000000e+00  0.00000000e+00  0.00000000e+00  1.20361280e+01
+   5.27159805e+01]]
+
+[[ 2.17560000e+00  4.02310000e+00 -2.17320000e+00  0.00000000e+00
+  -5.65857084e+00]
+ [ 0.00000000e+00  1.34394804e+01 -4.01866194e+00  0.00000000e+00
+  -2.18670265e+01]
+ [ 0.00000000e+00  4.44089210e-16 -8.92952394e-01  0.00000000e+00
+  -5.06994697e+00]
+ [ 0.00000000e+00  0.00000000e+00  0.00000000e+00  1.20361280e+01
+   5.27159805e+01]]
+
+[[ 2.17560000e+00  4.02310000e+00 -2.17320000e+00  0.00000000e+00
+  -5.65857084e+00]
+ [ 0.00000000e+00  1.34394804e+01  0.00000000e+00  0.00000000e+00
+   9.49870688e-01]
+ [ 0.00000000e+00  4.44089210e-16 -8.92952394e-01  0.00000000e+00
+  -5.06994697e+00]
+ [ 0.00000000e+00  0.00000000e+00  0.00000000e+00  1.20361280e+01
+   5.27159805e+01]]
+
+[[ 2.17560000e+00  4.02310000e+00  0.00000000e+00  0.00000000e+00
+   6.68028266e+00]
+ [ 0.00000000e+00  1.34394804e+01  0.00000000e+00  0.00000000e+00
+   9.49870688e-01]
+ [ 0.00000000e+00  4.44089210e-16 -8.92952394e-01  0.00000000e+00
+  -5.06994697e+00]
+ [ 0.00000000e+00  0.00000000e+00  0.00000000e+00  1.20361280e+01
+   5.27159805e+01]]
+
+[[ 2.17560000e+00  0.00000000e+00  0.00000000e+00  0.00000000e+00
+   6.39593946e+00]
+ [ 0.00000000e+00  1.34394804e+01  0.00000000e+00  0.00000000e+00
+   9.49870688e-01]
+ [ 0.00000000e+00  4.44089210e-16 -8.92952394e-01  0.00000000e+00
+  -5.06994697e+00]
+ [ 0.00000000e+00  0.00000000e+00  0.00000000e+00  1.20361280e+01
+   5.27159805e+01]]
+
+Valor de la solución x: [2.9398508  0.07067764 5.677735   4.3798122 ]</code></pre>
+</div>
+</div>
+</section>
+</section>
+<section id="link-del-repositorio" class="level2">
+<h2 class="anchored" data-anchor-id="link-del-repositorio">Link del repositorio:</h2>
+<p>https://github.com/ElAlfa3007/M-todos_Num-ricos.git</p>
+</section>
+
+</main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
