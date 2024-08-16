@@ -1,0 +1,1152 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.4.553">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>deber12_leandro_bravo</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="Deber12_Leandro_Bravo_files/libs/clipboard/clipboard.min.js"></script>
+<script src="Deber12_Leandro_Bravo_files/libs/quarto-html/quarto.js"></script>
+<script src="Deber12_Leandro_Bravo_files/libs/quarto-html/popper.min.js"></script>
+<script src="Deber12_Leandro_Bravo_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="Deber12_Leandro_Bravo_files/libs/quarto-html/anchor.min.js"></script>
+<link href="Deber12_Leandro_Bravo_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="Deber12_Leandro_Bravo_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="Deber12_Leandro_Bravo_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="Deber12_Leandro_Bravo_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="Deber12_Leandro_Bravo_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+</head>
+
+<body class="fullcontent">
+
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+
+<main class="content" id="quarto-document-content">
+
+
+
+
+<p style="text-align: right;">
+<img src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQWwhLsJ3D-RF2wSL1w2Zl8z6DYSAs4vcqmQxYnELC0rwxX06HJ" alt="Logo EPN" width="100" height="100" style="float: right;">
+</p><center>
+<span style="font-size: 26px; font-weight: bold;">ESCUELA POLITÉCNICA NACIONAL</span>
+</center>
+<center>
+<span style="font-size: 26px; font-weight: bold;">MÉTODOS NUMÉRICOS</span>
+</center>
+<h3 style="font-size: 20px;" class="anchored">
+<span style="float:left">Leandro Bravo</span> <span style="float:right">GR1CC</span>
+</h3>
+<p><br></p>
+<section id="tarea-12---ode-método-de-euler" class="level2">
+<h2 class="anchored" data-anchor-id="tarea-12---ode-método-de-euler">Tarea 12 - ODE Método de Euler</h2>
+<div id="3bce5461-3b38-4e0a-9ee1-dd7cf8b52b35" class="cell" data-execution_count="83">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="op">%</span>load_ext autoreload</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> math</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> src <span class="im">import</span> ODE_euler, graphics, ODE_euler_nth</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>The autoreload extension is already loaded. To reload it, use:
+  %reload_ext autoreload</code></pre>
+</div>
+</div>
+</section>
+<section id="conjunto-de-ejercicios" class="level1">
+<h1>Conjunto de ejercicios</h1>
+<ol type="1">
+<li>Use el método de Euler para aproximar las soluciones para cada uno de los siguientes problemas de valor inicial.</li>
+</ol>
+<ol type="a">
+<li><span class="math inline">\(y' = te^{3t} - 2y\)</span>, <span class="math inline">\(0 \le t \le 1\)</span>, <span class="math inline">\(y(0) = 0\)</span>, con <span class="math inline">\(h = 0.5\)</span></li>
+</ol>
+<div id="8ea8e254-6bf9-44f7-8be0-b09f5e7f1dcf" class="cell" data-execution_count="146">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="op">%</span>autoreload <span class="dv">2</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>y_der <span class="op">=</span> <span class="kw">lambda</span> t, y: t<span class="op">*</span>math.exp(<span class="dv">3</span><span class="op">*</span>t) <span class="op">-</span> <span class="dv">2</span><span class="op">*</span>y</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>y_init <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>ys1a, ts1a, h <span class="op">=</span> ODE_euler(a <span class="op">=</span> <span class="dv">0</span>, b <span class="op">=</span> <span class="dv">1</span>, f <span class="op">=</span> y_der, y_t0 <span class="op">=</span> y_init, N <span class="op">=</span> <span class="dv">2</span>)</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"El valor de h es: </span><span class="sc">{</span>h<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>graphics(ts1a, ys1a)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>El valor de h es: 0.5</code></pre>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="Deber12_Leandro_Bravo_files/figure-html/cell-3-output-2.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<ol start="2" type="a">
+<li><span class="math inline">\(y' = 1 + (t - y)^2\)</span>, <span class="math inline">\(2 \le t \le 3\)</span>, <span class="math inline">\(y(2) = 1\)</span>, con <span class="math inline">\(h = 0.5\)</span></li>
+</ol>
+<div id="d400d9d7-13b6-45bd-963b-0105842b3d75" class="cell" data-execution_count="148">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="op">%</span>autoreload <span class="dv">2</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>y_der <span class="op">=</span> <span class="kw">lambda</span> t, y: <span class="dv">1</span> <span class="op">+</span> (t <span class="op">-</span> y)<span class="op">**</span><span class="dv">2</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>y_init <span class="op">=</span> <span class="dv">1</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>ys1b, ts1b, h <span class="op">=</span> ODE_euler(a <span class="op">=</span> <span class="dv">2</span>, b <span class="op">=</span> <span class="dv">3</span>, f <span class="op">=</span> y_der, y_t0 <span class="op">=</span> y_init, N <span class="op">=</span> <span class="dv">2</span>)</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"El valor de h es: </span><span class="sc">{</span>h<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>graphics(ts1b, ys1b)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>El valor de h es: 0.5</code></pre>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="Deber12_Leandro_Bravo_files/figure-html/cell-4-output-2.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<ol start="3" type="a">
+<li><span class="math inline">\(y' = 1 + \frac{y}{t}\)</span>, <span class="math inline">\(1 \le t \le 2\)</span>, <span class="math inline">\(y(1) = 2\)</span>, con <span class="math inline">\(h = 0.25\)</span></li>
+</ol>
+<div id="a9a10774-c9a9-41e8-b2f5-56febae098f1" class="cell" data-execution_count="150">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="op">%</span>autoreload <span class="dv">2</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>y_der <span class="op">=</span> <span class="kw">lambda</span> t, y: <span class="dv">1</span> <span class="op">+</span> y<span class="op">/</span>t</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>y_init <span class="op">=</span> <span class="dv">2</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>ys1c, ts1c, h <span class="op">=</span> ODE_euler(a <span class="op">=</span> <span class="dv">1</span>, b <span class="op">=</span> <span class="dv">2</span>, f <span class="op">=</span> y_der, y_t0 <span class="op">=</span> y_init, N <span class="op">=</span> <span class="dv">4</span>)</span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"El valor de h es: </span><span class="sc">{</span>h<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>graphics(ts1c, ys1c)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>El valor de h es: 0.25</code></pre>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="Deber12_Leandro_Bravo_files/figure-html/cell-5-output-2.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<ol start="4" type="a">
+<li><span class="math inline">\(y' = \cos{2t} + \sin{3t}\)</span>, <span class="math inline">\(0 \le t \le 1\)</span>, <span class="math inline">\(y(0) = 1\)</span>, con <span class="math inline">\(h = 0.25\)</span></li>
+</ol>
+<div id="45f81f0b-7aa5-4b49-b3f4-cbae022ec59a" class="cell" data-execution_count="152">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="op">%</span>autoreload <span class="dv">2</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>y_der <span class="op">=</span> <span class="kw">lambda</span> t, y: math.cos(<span class="dv">2</span><span class="op">*</span>t) <span class="op">+</span> math.sin(<span class="dv">3</span><span class="op">*</span>t)</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>y_init <span class="op">=</span> <span class="dv">1</span></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>ys1d, ts1d, h <span class="op">=</span> ODE_euler(a <span class="op">=</span> <span class="dv">0</span>, b <span class="op">=</span> <span class="dv">1</span>, f <span class="op">=</span> y_der, y_t0 <span class="op">=</span> y_init, N <span class="op">=</span> <span class="dv">4</span>)</span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"El valor de h es: </span><span class="sc">{</span>h<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>graphics(ts1d, ys1d)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>El valor de h es: 0.25</code></pre>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="Deber12_Leandro_Bravo_files/figure-html/cell-6-output-2.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<ol start="2" type="1">
+<li>Las soluciones reales para los problemas de valor inicial en el ejercicio 1 se proporcionan aquí. Compare el error real en cada paso.</li>
+</ol>
+<ol type="a">
+<li><span class="math inline">\(y(t) = \frac{1}{5} te^{3t} - \frac{1}{25} te^{3t} + \frac{1}{25} te^{-2t}\)</span></li>
+</ol>
+<div id="a1cdc63a-0036-4c24-81e3-53fc930f929f" class="cell" data-execution_count="154">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="op">%</span>autoreload <span class="dv">2</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> y(t):</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="dv">1</span><span class="op">/</span><span class="dv">5</span><span class="op">*</span>t<span class="op">*</span>math.exp(<span class="dv">3</span><span class="op">*</span>t) <span class="op">-</span> <span class="dv">1</span><span class="op">/</span><span class="dv">25</span><span class="op">*</span>t<span class="op">*</span>math.exp(<span class="dv">3</span><span class="op">*</span>t) <span class="op">+</span> <span class="dv">1</span><span class="op">/</span><span class="dv">25</span><span class="op">*</span>t<span class="op">*</span>math.exp(<span class="op">-</span><span class="dv">2</span><span class="op">*</span>t)</span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>errorReal <span class="op">=</span> np.mean([<span class="bu">abs</span>(y(t) <span class="op">-</span> y_aprox) <span class="op">/</span> <span class="bu">abs</span>(y(t)) <span class="cf">for</span> y_aprox, t <span class="kw">in</span> <span class="bu">zip</span>(ys1a, ts1a)])</span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"El error real es: </span><span class="sc">{</span>errorReal<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-error">
+<pre><code>ZeroDivisionError: float division by zero</code></pre>
+</div>
+</div>
+<ol start="2" type="a">
+<li><span class="math inline">\(y(t) = t + \frac{1}{1 - t}\)</span></li>
+</ol>
+<div id="442444c7-0c73-4492-92d9-ca0345b89390" class="cell" data-execution_count="157">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="op">%</span>autoreload <span class="dv">2</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> y(t):</span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> t <span class="op">+</span> <span class="dv">1</span><span class="op">/</span>(<span class="dv">1</span> <span class="op">-</span> t)</span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>errorReal <span class="op">=</span> np.mean([<span class="bu">abs</span>(y(t) <span class="op">-</span> y_aprox) <span class="op">/</span> <span class="bu">abs</span>(y(t)) <span class="cf">for</span> y_aprox, t <span class="kw">in</span> <span class="bu">zip</span>(ys1b, ts1b)])</span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"El error real es: </span><span class="sc">{</span>errorReal<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>El error real es: 0.04696969696969694</code></pre>
+</div>
+</div>
+<ol start="3" type="a">
+<li><span class="math inline">\(y(t) = t \ln{t} + 2t\)</span></li>
+</ol>
+<div id="455aaa50-018d-44e7-87b8-9a79670d366e" class="cell" data-execution_count="160">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="op">%</span>autoreload <span class="dv">2</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> y(t):</span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> t <span class="op">*</span> math.log(t) <span class="op">+</span> <span class="dv">2</span><span class="op">*</span>t</span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>errorReal <span class="op">=</span> np.mean([<span class="bu">abs</span>(y(t) <span class="op">-</span> y_aprox) <span class="op">/</span> <span class="bu">abs</span>(y(t)) <span class="cf">for</span> y_aprox, t <span class="kw">in</span> <span class="bu">zip</span>(ys1c, ts1c)])</span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"El error real es: </span><span class="sc">{</span>errorReal<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>El error real es: 0.013575458924045315</code></pre>
+</div>
+</div>
+<ol start="4" type="a">
+<li><span class="math inline">\(y(t) = \frac{1}{2} \sin{2t} - \frac{1}{3} \cos{3t} + \frac{4}{3}\)</span></li>
+</ol>
+<div id="f6b56edb-2ab1-4cdf-8627-4b655d5cf125" class="cell" data-execution_count="163">
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="op">%</span>autoreload <span class="dv">2</span></span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> y(t):</span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="dv">1</span><span class="op">/</span><span class="dv">2</span><span class="op">*</span>math.sin(<span class="dv">2</span><span class="op">*</span>t) <span class="op">-</span> <span class="dv">1</span><span class="op">/</span><span class="dv">3</span><span class="op">*</span>math.cos(<span class="dv">3</span><span class="op">*</span>t) <span class="op">+</span> <span class="dv">4</span><span class="op">/</span><span class="dv">3</span></span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>errorReal <span class="op">=</span> np.mean([<span class="bu">abs</span>(y(t) <span class="op">-</span> y_aprox) <span class="op">/</span> <span class="bu">abs</span>(y(t)) <span class="cf">for</span> y_aprox, t <span class="kw">in</span> <span class="bu">zip</span>(ys1d, ts1d)])</span>
+<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"El error real es: </span><span class="sc">{</span>errorReal<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>El error real es: 0.035265188624637164</code></pre>
+</div>
+</div>
+<ol start="3" type="1">
+<li>Utilice el método de Euler para aproximar las soluciones para cada uno de los siguientes problemas de valor inicial.</li>
+</ol>
+<ol type="a">
+<li><span class="math inline">\(y' = \frac{y}{t} - (\frac{y}{t})^2\)</span>, <span class="math inline">\(1 \le t \le 2\)</span>, <span class="math inline">\(y(1) = 1\)</span>, con <span class="math inline">\(h = 0.1\)</span>.</li>
+</ol>
+<div id="7a54b8f5-4415-4b33-9225-7e6b6909aead" class="cell" data-execution_count="185">
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="op">%</span>autoreload <span class="dv">2</span></span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>y_der <span class="op">=</span> <span class="kw">lambda</span> t, y: y<span class="op">/</span>t <span class="op">-</span> (y<span class="op">/</span>t)<span class="op">**</span><span class="dv">2</span></span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>y_init <span class="op">=</span> <span class="dv">1</span></span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a>ys2a, ts2a, h <span class="op">=</span> ODE_euler(a <span class="op">=</span> <span class="dv">1</span>, b <span class="op">=</span> <span class="dv">2</span>, f <span class="op">=</span> y_der, y_t0 <span class="op">=</span> y_init, N <span class="op">=</span> <span class="dv">10</span>)</span>
+<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-7"><a href="#cb19-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"El valor de h es: </span><span class="sc">{</span>h<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb19-8"><a href="#cb19-8" aria-hidden="true" tabindex="-1"></a>graphics(ts2a, ys2a)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>El valor de h es: 0.1</code></pre>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="Deber12_Leandro_Bravo_files/figure-html/cell-11-output-2.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<ol start="2" type="a">
+<li><span class="math inline">\(y' = 1 + \frac{y}{t} + (\frac{y}{t})^2\)</span>, <span class="math inline">\(1 \le t \le 3\)</span>, <span class="math inline">\(y(1) = 0\)</span>, con <span class="math inline">\(h = 0.2\)</span>.</li>
+</ol>
+<div id="b661fb54-1df6-488a-b006-2b43cfeb4a7f" class="cell" data-execution_count="187">
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="op">%</span>autoreload <span class="dv">2</span></span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>y_der <span class="op">=</span> <span class="kw">lambda</span> t, y: <span class="dv">1</span> <span class="op">+</span> y<span class="op">/</span>t <span class="op">+</span> (y<span class="op">/</span>t)<span class="op">**</span><span class="dv">2</span></span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>y_init <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a>ys2b, ts2b, h <span class="op">=</span> ODE_euler(a <span class="op">=</span> <span class="dv">1</span>, b <span class="op">=</span> <span class="dv">3</span>, f <span class="op">=</span> y_der, y_t0 <span class="op">=</span> y_init, N <span class="op">=</span> <span class="dv">10</span>)</span>
+<span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-7"><a href="#cb21-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"El valor de h es: </span><span class="sc">{</span>h<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb21-8"><a href="#cb21-8" aria-hidden="true" tabindex="-1"></a>graphics(ts2b, ys2b)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>El valor de h es: 0.2</code></pre>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="Deber12_Leandro_Bravo_files/figure-html/cell-12-output-2.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<ol start="3" type="a">
+<li><span class="math inline">\(y' = -(y + 1)(y + 3)\)</span>, <span class="math inline">\(0 \le t \le 2\)</span>, <span class="math inline">\(y(0) = -2\)</span>, con <span class="math inline">\(h = 0.2\)</span>.</li>
+</ol>
+<div id="d7a20524-fa1b-46f2-971f-14355a03deef" class="cell" data-execution_count="217">
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="op">%</span>autoreload <span class="dv">2</span></span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>y_der <span class="op">=</span> <span class="kw">lambda</span> t, y: <span class="op">-</span>(y <span class="op">+</span> <span class="dv">1</span>)<span class="op">*</span>(y <span class="op">+</span> <span class="dv">3</span>)</span>
+<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>y_init <span class="op">=</span> <span class="op">-</span><span class="dv">2</span></span>
+<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a>ys2c, ts2c, h <span class="op">=</span> ODE_euler(a <span class="op">=</span> <span class="dv">0</span>, b <span class="op">=</span> <span class="dv">2</span>, f <span class="op">=</span> y_der, y_t0 <span class="op">=</span> y_init, N <span class="op">=</span> <span class="dv">10</span>)</span>
+<span id="cb23-6"><a href="#cb23-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-7"><a href="#cb23-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"El valor de h es: </span><span class="sc">{</span>h<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb23-8"><a href="#cb23-8" aria-hidden="true" tabindex="-1"></a>graphics(ts2c, ys2c)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>El valor de h es: 0.2</code></pre>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="Deber12_Leandro_Bravo_files/figure-html/cell-13-output-2.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<ol start="4" type="a">
+<li><span class="math inline">\(y' = -5y + 5t^2 + 2t\)</span>, <span class="math inline">\(0 \le t \le 1\)</span>, <span class="math inline">\(y(0) = \frac{1}{3}\)</span>, con <span class="math inline">\(h = 0.1\)</span>.</li>
+</ol>
+<div id="d96ad7c0-80a8-48c0-ba48-b988cf9c6279" class="cell" data-execution_count="220">
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="op">%</span>autoreload <span class="dv">2</span></span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>y_der <span class="op">=</span> <span class="kw">lambda</span> t, y: <span class="op">-</span><span class="dv">5</span><span class="op">*</span>y <span class="op">+</span> <span class="dv">5</span><span class="op">*</span>t<span class="op">**</span><span class="dv">2</span> <span class="op">+</span> <span class="dv">2</span><span class="op">*</span>t</span>
+<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a>y_init <span class="op">=</span> <span class="dv">1</span><span class="op">/</span><span class="dv">3</span></span>
+<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-5"><a href="#cb25-5" aria-hidden="true" tabindex="-1"></a>ys2d, ts2d, h <span class="op">=</span> ODE_euler(a <span class="op">=</span> <span class="dv">0</span>, b <span class="op">=</span> <span class="dv">1</span>, f <span class="op">=</span> y_der, y_t0 <span class="op">=</span> y_init, N <span class="op">=</span> <span class="dv">10</span>)</span>
+<span id="cb25-6"><a href="#cb25-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-7"><a href="#cb25-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"El valor de h es: </span><span class="sc">{</span>h<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb25-8"><a href="#cb25-8" aria-hidden="true" tabindex="-1"></a>graphics(ts2d, ys2d)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>El valor de h es: 0.1</code></pre>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="Deber12_Leandro_Bravo_files/figure-html/cell-14-output-2.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<ol start="4" type="1">
+<li>Aquí se dan las soluciones reales para los problemas de valor inicial en el ejercicio 3. Calcule el error real en las aproximaciones del ejercicio 3.</li>
+</ol>
+<ol type="a">
+<li><span class="math inline">\(y(t) = \frac{t}{1 + \ln{t}}\)</span></li>
+</ol>
+<div id="ed914c7d" class="cell" data-execution_count="224">
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="op">%</span>autoreload <span class="dv">2</span></span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> y1(t):</span>
+<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> t<span class="op">/</span>(<span class="dv">1</span> <span class="op">+</span> math.log(t))</span>
+<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-5"><a href="#cb27-5" aria-hidden="true" tabindex="-1"></a>errorReal <span class="op">=</span> np.mean([<span class="bu">abs</span>(y(t) <span class="op">-</span> y_aprox) <span class="op">/</span> <span class="bu">abs</span>(y(t)) <span class="cf">for</span> y_aprox, t <span class="kw">in</span> <span class="bu">zip</span>(ys2a, ts2a)])</span>
+<span id="cb27-6"><a href="#cb27-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"El error real es: </span><span class="sc">{</span>errorReal<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>El error real es: 0.4026114748989524</code></pre>
+</div>
+</div>
+<ol start="2" type="a">
+<li><span class="math inline">\(y(t) = t \tan{\ln{t}}\)</span></li>
+</ol>
+<div id="ef4c51a3" class="cell" data-execution_count="227">
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="op">%</span>autoreload <span class="dv">2</span></span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> y2(t):</span>
+<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> t<span class="op">*</span>math.tan(math.log(t))</span>
+<span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb29-5"><a href="#cb29-5" aria-hidden="true" tabindex="-1"></a>errorReal <span class="op">=</span> np.mean([<span class="bu">abs</span>(y(t) <span class="op">-</span> y_aprox) <span class="op">/</span> <span class="bu">abs</span>(y(t)) <span class="cf">for</span> y_aprox, t <span class="kw">in</span> <span class="bu">zip</span>(ys2b, ts2b)])</span>
+<span id="cb29-6"><a href="#cb29-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"El error real es: </span><span class="sc">{</span>errorReal<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>El error real es: 1.4857714189452615</code></pre>
+</div>
+</div>
+<ol start="3" type="a">
+<li><span class="math inline">\(y(t) = - 3 + \frac{2}{1 + e^{-2t}}\)</span></li>
+</ol>
+<div id="5d53c80e" class="cell" data-execution_count="230">
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="op">%</span>autoreload <span class="dv">2</span></span>
+<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> y3(t):</span>
+<span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="op">-</span> <span class="dv">3</span> <span class="op">+</span> <span class="dv">2</span><span class="op">/</span>(<span class="dv">1</span> <span class="op">+</span> math.exp(<span class="op">-</span><span class="dv">2</span><span class="op">*</span>t))</span>
+<span id="cb31-4"><a href="#cb31-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-5"><a href="#cb31-5" aria-hidden="true" tabindex="-1"></a>errorReal <span class="op">=</span> np.mean([<span class="bu">abs</span>(y(t) <span class="op">-</span> y_aprox) <span class="op">/</span> <span class="bu">abs</span>(y(t)) <span class="cf">for</span> y_aprox, t <span class="kw">in</span> <span class="bu">zip</span>(ys2c, ts2c)])</span>
+<span id="cb31-6"><a href="#cb31-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"El error real es: </span><span class="sc">{</span>errorReal<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>El error real es: 2.0191941754493365</code></pre>
+</div>
+</div>
+<ol start="4" type="a">
+<li><span class="math inline">\(y(t) = t^2 + \frac{1}{3} e^{-5t}\)</span></li>
+</ol>
+<div id="3371184f" class="cell" data-execution_count="233">
+<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="op">%</span>autoreload <span class="dv">2</span></span>
+<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> y4(t):</span>
+<span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> t<span class="op">**</span><span class="dv">2</span> <span class="op">+</span> (<span class="dv">1</span><span class="op">/</span><span class="dv">3</span>)<span class="op">*</span>math.exp(<span class="op">-</span><span class="dv">5</span><span class="op">*</span>t)</span>
+<span id="cb33-4"><a href="#cb33-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb33-5"><a href="#cb33-5" aria-hidden="true" tabindex="-1"></a>errorReal <span class="op">=</span> np.mean([<span class="bu">abs</span>(y(t) <span class="op">-</span> y_aprox) <span class="op">/</span> <span class="bu">abs</span>(y(t)) <span class="cf">for</span> y_aprox, t <span class="kw">in</span> <span class="bu">zip</span>(ys2d, ts2d)])</span>
+<span id="cb33-6"><a href="#cb33-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"El error real es: </span><span class="sc">{</span>errorReal<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>El error real es: 0.7773952281750381</code></pre>
+</div>
+</div>
+<ol start="5" type="1">
+<li>Utilice los resultados del ejercicio 3 y la interpolación lineal para aproximar los siguientes valores de 𝑦(𝑡). Compare las aproximaciones asignadas para los valores reales obtenidos mediante las funciones determinadas en el ejercicio 4.</li>
+</ol>
+<ol type="a">
+<li><span class="math inline">\(y(0.25)\)</span> y <span class="math inline">\(y(0.93)\)</span>.</li>
+</ol>
+<div id="636f8d7d" class="cell" data-execution_count="238">
+<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a>res <span class="op">=</span> y1(<span class="fl">0.25</span>)</span>
+<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(res)</span>
+<span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-4"><a href="#cb35-4" aria-hidden="true" tabindex="-1"></a>res <span class="op">=</span> y1(<span class="fl">0.93</span>)</span>
+<span id="cb35-5"><a href="#cb35-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(res)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>-0.6471748623905226
+1.0027718477462106</code></pre>
+</div>
+</div>
+<ol start="2" type="a">
+<li><span class="math inline">\(y(1.25)\)</span> y <span class="math inline">\(y(1.93)\)</span>.</li>
+</ol>
+<div id="bfbddf1d" class="cell" data-execution_count="243">
+<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a>res <span class="op">=</span> y2(<span class="fl">1.25</span>)</span>
+<span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(res)</span>
+<span id="cb37-3"><a href="#cb37-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb37-4"><a href="#cb37-4" aria-hidden="true" tabindex="-1"></a>res <span class="op">=</span> y2(<span class="fl">1.93</span>)</span>
+<span id="cb37-5"><a href="#cb37-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(res)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>0.2836531261952289
+1.4902277738186658</code></pre>
+</div>
+</div>
+<ol start="3" type="a">
+<li><span class="math inline">\(y(2.10)\)</span> y <span class="math inline">\(y(2.75)\)</span>.</li>
+</ol>
+<div id="a4743f3b" class="cell" data-execution_count="246">
+<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a>res <span class="op">=</span> y3(<span class="fl">2.1</span>)</span>
+<span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(res)</span>
+<span id="cb39-3"><a href="#cb39-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb39-4"><a href="#cb39-4" aria-hidden="true" tabindex="-1"></a>res <span class="op">=</span> y3(<span class="fl">2.75</span>)</span>
+<span id="cb39-5"><a href="#cb39-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(res)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>-1.0295480633865461
+-1.008140275431792</code></pre>
+</div>
+</div>
+<ol start="4" type="a">
+<li><span class="math inline">\(y(0.54)\)</span> y <span class="math inline">\(y(0.94)\)</span>.</li>
+</ol>
+<div id="16119929" class="cell" data-execution_count="250">
+<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a>res <span class="op">=</span> y4(<span class="fl">0.54</span>)</span>
+<span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(res)</span>
+<span id="cb41-3"><a href="#cb41-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-4"><a href="#cb41-4" aria-hidden="true" tabindex="-1"></a>res <span class="op">=</span> y4(<span class="fl">0.94</span>)</span>
+<span id="cb41-5"><a href="#cb41-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(res)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>0.3140018375799166
+0.8866317590338986</code></pre>
+</div>
+</div>
+<ol start="6" type="1">
+<li>Use el método de Taylor de orden 2 para aproximar las soluciones para cada uno de los siguientes problemas de valor inicial.</li>
+</ol>
+<ol type="a">
+<li><span class="math inline">\(y' = te^{3t} - 2y\)</span>, <span class="math inline">\(0 \le t \le 1\)</span>, <span class="math inline">\(y(0) = 0\)</span>, con <span class="math inline">\(h = 0.5\)</span></li>
+</ol>
+<div id="a338b2a0" class="cell" data-execution_count="258">
+<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="op">%</span>autoreload <span class="dv">2</span></span>
+<span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a>y_der <span class="op">=</span> <span class="kw">lambda</span> t, y: t<span class="op">*</span>math.exp(<span class="dv">3</span><span class="op">*</span>t) <span class="op">-</span> <span class="dv">2</span><span class="op">*</span>y</span>
+<span id="cb43-3"><a href="#cb43-3" aria-hidden="true" tabindex="-1"></a>y_der_2 <span class="op">=</span> <span class="kw">lambda</span> t, y: <span class="op">-</span><span class="dv">2</span><span class="op">*</span>y_der(t, y) <span class="op">+</span> math.exp(<span class="dv">3</span><span class="op">*</span>t) <span class="op">+</span> <span class="dv">3</span><span class="op">*</span>t<span class="op">*</span>math.exp(<span class="dv">3</span><span class="op">*</span>t)</span>
+<span id="cb43-4"><a href="#cb43-4" aria-hidden="true" tabindex="-1"></a>y_der_3 <span class="op">=</span> <span class="kw">lambda</span> t, y: <span class="op">-</span><span class="dv">2</span><span class="op">*</span>y_der_2(t, y) <span class="op">+</span> <span class="dv">3</span> <span class="op">*</span> math.exp(<span class="dv">3</span><span class="op">*</span>t) <span class="op">+</span> <span class="dv">9</span><span class="op">*</span>t<span class="op">*</span>math.exp(<span class="dv">3</span><span class="op">*</span>t)</span>
+<span id="cb43-5"><a href="#cb43-5" aria-hidden="true" tabindex="-1"></a>y_init <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb43-6"><a href="#cb43-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb43-7"><a href="#cb43-7" aria-hidden="true" tabindex="-1"></a>ys3a, ts3a, h <span class="op">=</span> ODE_euler_nth(a <span class="op">=</span> <span class="dv">0</span>, b <span class="op">=</span> <span class="dv">1</span>, f <span class="op">=</span> y_der,</span>
+<span id="cb43-8"><a href="#cb43-8" aria-hidden="true" tabindex="-1"></a>                          f_derivatives <span class="op">=</span> [y_der_2, y_der_3],</span>
+<span id="cb43-9"><a href="#cb43-9" aria-hidden="true" tabindex="-1"></a>                          y_t0 <span class="op">=</span> y_init, N <span class="op">=</span> <span class="dv">2</span>)</span>
+<span id="cb43-10"><a href="#cb43-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb43-11"><a href="#cb43-11" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"El valor de h es: </span><span class="sc">{</span>h<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb43-12"><a href="#cb43-12" aria-hidden="true" tabindex="-1"></a>graphics(ts3a, ys3a)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>El valor de h es: 0.5</code></pre>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="Deber12_Leandro_Bravo_files/figure-html/cell-23-output-2.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<ol start="2" type="a">
+<li><span class="math inline">\(y' = 1 + (t - y)^2\)</span>, <span class="math inline">\(2 \le t \le 3\)</span>, <span class="math inline">\(y(2) = 1\)</span>, con <span class="math inline">\(h = 0.5\)</span></li>
+</ol>
+<div id="08554adc" class="cell" data-execution_count="261">
+<div class="sourceCode cell-code" id="cb45"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a><span class="op">%</span>autoreload <span class="dv">2</span></span>
+<span id="cb45-2"><a href="#cb45-2" aria-hidden="true" tabindex="-1"></a>y_der <span class="op">=</span> <span class="kw">lambda</span> t, y: <span class="dv">1</span> <span class="op">+</span> (t <span class="op">-</span> y)<span class="op">**</span><span class="dv">2</span></span>
+<span id="cb45-3"><a href="#cb45-3" aria-hidden="true" tabindex="-1"></a>y_der_2 <span class="op">=</span> <span class="kw">lambda</span> t, y: <span class="dv">2</span><span class="op">*</span>(t <span class="op">-</span> y)<span class="op">*</span>(<span class="dv">1</span> <span class="op">-</span> y_der(t,y))</span>
+<span id="cb45-4"><a href="#cb45-4" aria-hidden="true" tabindex="-1"></a>y_der_3 <span class="op">=</span> <span class="kw">lambda</span> t, y: <span class="dv">2</span><span class="op">*</span>(<span class="dv">1</span> <span class="op">-</span> y_der(t, y))<span class="op">**</span><span class="dv">2</span> <span class="op">-</span> <span class="dv">2</span><span class="op">*</span>(t <span class="op">-</span> y)<span class="op">*</span>y_der_2(t,y)</span>
+<span id="cb45-5"><a href="#cb45-5" aria-hidden="true" tabindex="-1"></a>y_init <span class="op">=</span> <span class="dv">1</span></span>
+<span id="cb45-6"><a href="#cb45-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb45-7"><a href="#cb45-7" aria-hidden="true" tabindex="-1"></a>ys3b, ts3b, h <span class="op">=</span> ODE_euler_nth(a <span class="op">=</span> <span class="dv">2</span>, b <span class="op">=</span> <span class="dv">3</span>, f <span class="op">=</span> y_der,</span>
+<span id="cb45-8"><a href="#cb45-8" aria-hidden="true" tabindex="-1"></a>                          f_derivatives <span class="op">=</span> [y_der_2, y_der_3],</span>
+<span id="cb45-9"><a href="#cb45-9" aria-hidden="true" tabindex="-1"></a>                          y_t0 <span class="op">=</span> y_init, N <span class="op">=</span> <span class="dv">2</span>)</span>
+<span id="cb45-10"><a href="#cb45-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb45-11"><a href="#cb45-11" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"El valor de h es: </span><span class="sc">{</span>h<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb45-12"><a href="#cb45-12" aria-hidden="true" tabindex="-1"></a>graphics(ts3b, ys3b)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>El valor de h es: 0.5</code></pre>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="Deber12_Leandro_Bravo_files/figure-html/cell-24-output-2.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<ol start="3" type="a">
+<li><span class="math inline">\(y' = 1 + \frac{y}{t}\)</span>, <span class="math inline">\(1 \le t \le 2\)</span>, <span class="math inline">\(y(1) = 2\)</span>, con <span class="math inline">\(h = 0.25\)</span></li>
+</ol>
+<div id="7305c94a" class="cell" data-execution_count="265">
+<div class="sourceCode cell-code" id="cb47"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="op">%</span>autoreload <span class="dv">2</span></span>
+<span id="cb47-2"><a href="#cb47-2" aria-hidden="true" tabindex="-1"></a>y_der <span class="op">=</span> <span class="kw">lambda</span> t, y: <span class="dv">1</span> <span class="op">+</span> y<span class="op">/</span>t</span>
+<span id="cb47-3"><a href="#cb47-3" aria-hidden="true" tabindex="-1"></a>y_der_2 <span class="op">=</span> <span class="kw">lambda</span> t, y: (t <span class="op">*</span> y_der(t, y) <span class="op">-</span> y)<span class="op">/</span>t<span class="op">**</span><span class="dv">2</span></span>
+<span id="cb47-4"><a href="#cb47-4" aria-hidden="true" tabindex="-1"></a>y_der_3 <span class="op">=</span> <span class="kw">lambda</span> t, y: <span class="op">-</span><span class="dv">1</span><span class="op">/</span>t<span class="op">**</span><span class="dv">2</span></span>
+<span id="cb47-5"><a href="#cb47-5" aria-hidden="true" tabindex="-1"></a>y_init <span class="op">=</span> <span class="dv">2</span></span>
+<span id="cb47-6"><a href="#cb47-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb47-7"><a href="#cb47-7" aria-hidden="true" tabindex="-1"></a>ys3c, ts3c, h <span class="op">=</span> ODE_euler_nth(a <span class="op">=</span> <span class="dv">1</span>, b <span class="op">=</span> <span class="dv">2</span>, f <span class="op">=</span> y_der,</span>
+<span id="cb47-8"><a href="#cb47-8" aria-hidden="true" tabindex="-1"></a>                          f_derivatives <span class="op">=</span> [y_der_2, y_der_3],</span>
+<span id="cb47-9"><a href="#cb47-9" aria-hidden="true" tabindex="-1"></a>                          y_t0 <span class="op">=</span> y_init, N <span class="op">=</span> <span class="dv">4</span>)</span>
+<span id="cb47-10"><a href="#cb47-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb47-11"><a href="#cb47-11" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"El valor de h es: </span><span class="sc">{</span>h<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb47-12"><a href="#cb47-12" aria-hidden="true" tabindex="-1"></a>graphics(ts3c, ys3c)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>El valor de h es: 0.25</code></pre>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="Deber12_Leandro_Bravo_files/figure-html/cell-25-output-2.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<ol start="4" type="a">
+<li><span class="math inline">\(y' = \cos{2t} + \sin{3t}\)</span>, <span class="math inline">\(0 \le t \le 1\)</span>, <span class="math inline">\(y(0) = 1\)</span>, con <span class="math inline">\(h = 0.25\)</span></li>
+</ol>
+<div id="08c0e3c2" class="cell" data-execution_count="272">
+<div class="sourceCode cell-code" id="cb49"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a><span class="op">%</span>autoreload <span class="dv">2</span></span>
+<span id="cb49-2"><a href="#cb49-2" aria-hidden="true" tabindex="-1"></a>y_der <span class="op">=</span> <span class="kw">lambda</span> t, y: math.cos(<span class="dv">2</span><span class="op">*</span>t) <span class="op">+</span> math.sin(<span class="dv">3</span><span class="op">*</span>t)</span>
+<span id="cb49-3"><a href="#cb49-3" aria-hidden="true" tabindex="-1"></a>y_der_2 <span class="op">=</span> <span class="kw">lambda</span> t, y: <span class="op">-</span><span class="dv">2</span><span class="op">*</span>math.sin(<span class="dv">2</span><span class="op">*</span>t) <span class="op">+</span> <span class="dv">3</span><span class="op">*</span>math.cos(<span class="dv">3</span><span class="op">*</span>t)</span>
+<span id="cb49-4"><a href="#cb49-4" aria-hidden="true" tabindex="-1"></a>y_der_3 <span class="op">=</span> <span class="kw">lambda</span> t, y: <span class="op">-</span><span class="dv">4</span><span class="op">*</span>math.cos(<span class="dv">2</span><span class="op">*</span>t) <span class="op">-</span> <span class="dv">9</span><span class="op">*</span>math.sin(<span class="dv">3</span><span class="op">*</span>t)</span>
+<span id="cb49-5"><a href="#cb49-5" aria-hidden="true" tabindex="-1"></a>y_init <span class="op">=</span> <span class="dv">1</span></span>
+<span id="cb49-6"><a href="#cb49-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb49-7"><a href="#cb49-7" aria-hidden="true" tabindex="-1"></a>ys3d, ts3d, h <span class="op">=</span> ODE_euler_nth(a <span class="op">=</span> <span class="dv">0</span>, b <span class="op">=</span> <span class="dv">1</span>, f <span class="op">=</span> y_der,</span>
+<span id="cb49-8"><a href="#cb49-8" aria-hidden="true" tabindex="-1"></a>                          f_derivatives <span class="op">=</span> [y_der_2, y_der_3],</span>
+<span id="cb49-9"><a href="#cb49-9" aria-hidden="true" tabindex="-1"></a>                          y_t0 <span class="op">=</span> y_init, N <span class="op">=</span> <span class="dv">4</span>)</span>
+<span id="cb49-10"><a href="#cb49-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb49-11"><a href="#cb49-11" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"El valor de h es: </span><span class="sc">{</span>h<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb49-12"><a href="#cb49-12" aria-hidden="true" tabindex="-1"></a>graphics(ts3d, ys3d)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>El valor de h es: 0.25</code></pre>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="Deber12_Leandro_Bravo_files/figure-html/cell-26-output-2.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<ol start="7" type="1">
+<li>Repita el ejercicio 6 con el método de Taylor de orden 4</li>
+</ol>
+<ol type="a">
+<li><span class="math inline">\(y' = te^{3t} - 2y\)</span>, <span class="math inline">\(0 \le t \le 1\)</span>, <span class="math inline">\(y(0) = 0\)</span>, con <span class="math inline">\(h = 0.5\)</span></li>
+</ol>
+<div id="3e672fad" class="cell" data-execution_count="276">
+<div class="sourceCode cell-code" id="cb51"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb51-1"><a href="#cb51-1" aria-hidden="true" tabindex="-1"></a><span class="op">%</span>autoreload <span class="dv">2</span></span>
+<span id="cb51-2"><a href="#cb51-2" aria-hidden="true" tabindex="-1"></a>y_der <span class="op">=</span> <span class="kw">lambda</span> t, y: t<span class="op">*</span>math.exp(<span class="dv">3</span><span class="op">*</span>t) <span class="op">-</span> <span class="dv">2</span><span class="op">*</span>y</span>
+<span id="cb51-3"><a href="#cb51-3" aria-hidden="true" tabindex="-1"></a>y_der_2 <span class="op">=</span> <span class="kw">lambda</span> t, y: <span class="op">-</span><span class="dv">2</span><span class="op">*</span>y_der(t, y) <span class="op">+</span> math.exp(<span class="dv">3</span><span class="op">*</span>t) <span class="op">+</span> <span class="dv">3</span><span class="op">*</span>t<span class="op">*</span>math.exp(<span class="dv">3</span><span class="op">*</span>t)</span>
+<span id="cb51-4"><a href="#cb51-4" aria-hidden="true" tabindex="-1"></a>y_der_3 <span class="op">=</span> <span class="kw">lambda</span> t, y: <span class="op">-</span><span class="dv">2</span><span class="op">*</span>y_der_2(t, y) <span class="op">+</span> <span class="dv">3</span><span class="op">*</span>math.exp(<span class="dv">3</span><span class="op">*</span>t) <span class="op">+</span> <span class="dv">9</span><span class="op">*</span>t<span class="op">*</span>math.exp(<span class="dv">3</span><span class="op">*</span>t)</span>
+<span id="cb51-5"><a href="#cb51-5" aria-hidden="true" tabindex="-1"></a>y_der_4 <span class="op">=</span> <span class="kw">lambda</span> t, y: <span class="op">-</span><span class="dv">2</span><span class="op">*</span>y_der_3(t, y) <span class="op">+</span> <span class="dv">6</span><span class="op">*</span>math.exp(<span class="dv">3</span> <span class="op">*</span> t) <span class="op">+</span> <span class="dv">27</span><span class="op">*</span>t<span class="op">*</span>math.exp(<span class="dv">3</span><span class="op">*</span>t)</span>
+<span id="cb51-6"><a href="#cb51-6" aria-hidden="true" tabindex="-1"></a>y_der_5 <span class="op">=</span> <span class="kw">lambda</span> t, y: <span class="op">-</span><span class="dv">2</span><span class="op">*</span>y_der_4(t, y) <span class="op">+</span> <span class="dv">12</span><span class="op">*</span>math.exp(<span class="dv">3</span> <span class="op">*</span> t) <span class="op">+</span> <span class="dv">81</span><span class="op">*</span>t<span class="op">*</span>math.exp(<span class="dv">3</span><span class="op">*</span>t)</span>
+<span id="cb51-7"><a href="#cb51-7" aria-hidden="true" tabindex="-1"></a>y_init <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb51-8"><a href="#cb51-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb51-9"><a href="#cb51-9" aria-hidden="true" tabindex="-1"></a>ys4a, ts4a, h <span class="op">=</span> ODE_euler_nth(a <span class="op">=</span> <span class="dv">0</span>, b <span class="op">=</span> <span class="dv">1</span>, f <span class="op">=</span> y_der,</span>
+<span id="cb51-10"><a href="#cb51-10" aria-hidden="true" tabindex="-1"></a>                          f_derivatives <span class="op">=</span> [y_der_2, y_der_3, y_der_4, y_der_5],</span>
+<span id="cb51-11"><a href="#cb51-11" aria-hidden="true" tabindex="-1"></a>                          y_t0 <span class="op">=</span> y_init, N <span class="op">=</span> <span class="dv">2</span>)</span>
+<span id="cb51-12"><a href="#cb51-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb51-13"><a href="#cb51-13" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"El valor de h es: </span><span class="sc">{</span>h<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb51-14"><a href="#cb51-14" aria-hidden="true" tabindex="-1"></a>graphics(ts4a, ys4a)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>El valor de h es: 0.5</code></pre>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="Deber12_Leandro_Bravo_files/figure-html/cell-27-output-2.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<ol start="2" type="a">
+<li><span class="math inline">\(y' = 1 + (t - y)^2\)</span>, <span class="math inline">\(2 \le t \le 3\)</span>, <span class="math inline">\(y(2) = 1\)</span>, con <span class="math inline">\(h = 0.5\)</span></li>
+</ol>
+<div id="d2479036" class="cell" data-execution_count="278">
+<div class="sourceCode cell-code" id="cb53"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb53-1"><a href="#cb53-1" aria-hidden="true" tabindex="-1"></a><span class="op">%</span>autoreload <span class="dv">2</span></span>
+<span id="cb53-2"><a href="#cb53-2" aria-hidden="true" tabindex="-1"></a>y_der <span class="op">=</span> <span class="kw">lambda</span> t, y: <span class="dv">1</span> <span class="op">+</span> (t <span class="op">-</span> y)<span class="op">**</span><span class="dv">2</span></span>
+<span id="cb53-3"><a href="#cb53-3" aria-hidden="true" tabindex="-1"></a>y_der_2 <span class="op">=</span> <span class="kw">lambda</span> t, y: <span class="dv">2</span><span class="op">*</span>(t <span class="op">-</span> y)<span class="op">*</span>(<span class="dv">1</span> <span class="op">-</span> y_der(t,y))</span>
+<span id="cb53-4"><a href="#cb53-4" aria-hidden="true" tabindex="-1"></a>y_der_3 <span class="op">=</span> <span class="kw">lambda</span> t, y: <span class="dv">2</span><span class="op">*</span>(<span class="dv">1</span> <span class="op">-</span> y_der(t, y))<span class="op">**</span><span class="dv">2</span> <span class="op">-</span> <span class="dv">2</span><span class="op">*</span>(t <span class="op">-</span> y)<span class="op">*</span>y_der_2(t,y)</span>
+<span id="cb53-5"><a href="#cb53-5" aria-hidden="true" tabindex="-1"></a>y_init <span class="op">=</span> <span class="dv">1</span></span>
+<span id="cb53-6"><a href="#cb53-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb53-7"><a href="#cb53-7" aria-hidden="true" tabindex="-1"></a>ys4b, ts4b, h <span class="op">=</span> ODE_euler_nth(a <span class="op">=</span> <span class="dv">2</span>, b <span class="op">=</span> <span class="dv">3</span>, f <span class="op">=</span> y_der,</span>
+<span id="cb53-8"><a href="#cb53-8" aria-hidden="true" tabindex="-1"></a>                          f_derivatives <span class="op">=</span> [y_der_2, y_der_3],</span>
+<span id="cb53-9"><a href="#cb53-9" aria-hidden="true" tabindex="-1"></a>                          y_t0 <span class="op">=</span> y_init, N <span class="op">=</span> <span class="dv">2</span>)</span>
+<span id="cb53-10"><a href="#cb53-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb53-11"><a href="#cb53-11" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"El valor de h es: </span><span class="sc">{</span>h<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb53-12"><a href="#cb53-12" aria-hidden="true" tabindex="-1"></a>graphics(ts4b, ys4b)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>El valor de h es: 0.5</code></pre>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="Deber12_Leandro_Bravo_files/figure-html/cell-28-output-2.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<ol start="3" type="a">
+<li><span class="math inline">\(y' = 1 + \frac{y}{t}\)</span>, <span class="math inline">\(1 \le t \le 2\)</span>, <span class="math inline">\(y(1) = 2\)</span>, con <span class="math inline">\(h = 0.25\)</span></li>
+</ol>
+<div id="b875a803" class="cell" data-execution_count="293">
+<div class="sourceCode cell-code" id="cb55"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb55-1"><a href="#cb55-1" aria-hidden="true" tabindex="-1"></a><span class="op">%</span>autoreload <span class="dv">2</span></span>
+<span id="cb55-2"><a href="#cb55-2" aria-hidden="true" tabindex="-1"></a>y_der <span class="op">=</span> <span class="kw">lambda</span> t, y: <span class="dv">1</span> <span class="op">+</span> (t <span class="op">/</span> y)</span>
+<span id="cb55-3"><a href="#cb55-3" aria-hidden="true" tabindex="-1"></a>y_der_2 <span class="op">=</span> <span class="kw">lambda</span> t, y: (t <span class="op">*</span> y_der(t, y) <span class="op">-</span> y) <span class="op">/</span> t<span class="op">**</span><span class="dv">2</span></span>
+<span id="cb55-4"><a href="#cb55-4" aria-hidden="true" tabindex="-1"></a>y_der_3 <span class="op">=</span> <span class="kw">lambda</span> t, y: ((t<span class="op">**</span><span class="dv">2</span>) <span class="op">*</span> y_der_2(t, y) <span class="op">-</span> (<span class="dv">2</span> <span class="op">*</span> t <span class="op">*</span> (y_der(t, y) <span class="op">-</span> (y <span class="op">/</span> t)))) <span class="op">/</span> t<span class="op">**</span><span class="dv">3</span></span>
+<span id="cb55-5"><a href="#cb55-5" aria-hidden="true" tabindex="-1"></a>y_init <span class="op">=</span> <span class="dv">1</span></span>
+<span id="cb55-6"><a href="#cb55-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb55-7"><a href="#cb55-7" aria-hidden="true" tabindex="-1"></a>ys4c, ts4c, h <span class="op">=</span> ODE_euler_nth(a <span class="op">=</span> <span class="dv">1</span>, b <span class="op">=</span> <span class="dv">2</span>, f <span class="op">=</span> y_der,</span>
+<span id="cb55-8"><a href="#cb55-8" aria-hidden="true" tabindex="-1"></a>                          f_derivatives <span class="op">=</span> [y_der_2, y_der_3],</span>
+<span id="cb55-9"><a href="#cb55-9" aria-hidden="true" tabindex="-1"></a>                          y_t0 <span class="op">=</span> y_init, N <span class="op">=</span> <span class="dv">4</span>)</span>
+<span id="cb55-10"><a href="#cb55-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb55-11"><a href="#cb55-11" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"El valor de h es: </span><span class="sc">{</span>h<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb55-12"><a href="#cb55-12" aria-hidden="true" tabindex="-1"></a>graphics(ts4c, ys4c)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>El valor de h es: 0.25</code></pre>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="Deber12_Leandro_Bravo_files/figure-html/cell-29-output-2.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<ol start="4" type="a">
+<li><span class="math inline">\(y' = \cos{2t} + \sin{3t}\)</span>, <span class="math inline">\(0 \le t \le 1\)</span>, <span class="math inline">\(y(0) = 1\)</span>, con <span class="math inline">\(h = 0.25\)</span></li>
+</ol>
+<div id="dd363ba3" class="cell" data-execution_count="295">
+<div class="sourceCode cell-code" id="cb57"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb57-1"><a href="#cb57-1" aria-hidden="true" tabindex="-1"></a><span class="op">%</span>autoreload <span class="dv">2</span></span>
+<span id="cb57-2"><a href="#cb57-2" aria-hidden="true" tabindex="-1"></a>y_der <span class="op">=</span> <span class="kw">lambda</span> t, y: math.cos(<span class="dv">2</span><span class="op">*</span>t) <span class="op">+</span> math.sin(<span class="dv">3</span><span class="op">*</span>t)</span>
+<span id="cb57-3"><a href="#cb57-3" aria-hidden="true" tabindex="-1"></a>y_der_2 <span class="op">=</span> <span class="kw">lambda</span> t, y: <span class="op">-</span><span class="dv">2</span> <span class="op">*</span> math.sin(<span class="dv">2</span><span class="op">*</span>t) <span class="op">+</span> <span class="dv">3</span> <span class="op">*</span> math.cos(<span class="dv">3</span><span class="op">*</span>t)</span>
+<span id="cb57-4"><a href="#cb57-4" aria-hidden="true" tabindex="-1"></a>y_der_3 <span class="op">=</span> <span class="kw">lambda</span> t, y: <span class="op">-</span><span class="dv">4</span> <span class="op">*</span> math.cos(<span class="dv">2</span><span class="op">*</span>t) <span class="op">-</span> <span class="dv">9</span> <span class="op">*</span> math.sin(<span class="dv">3</span><span class="op">*</span>t)</span>
+<span id="cb57-5"><a href="#cb57-5" aria-hidden="true" tabindex="-1"></a>y_init <span class="op">=</span> <span class="dv">1</span></span>
+<span id="cb57-6"><a href="#cb57-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb57-7"><a href="#cb57-7" aria-hidden="true" tabindex="-1"></a>ys4d, ts4d, h <span class="op">=</span> ODE_euler_nth(a <span class="op">=</span> <span class="dv">0</span>, b <span class="op">=</span> <span class="dv">1</span>, f <span class="op">=</span> y_der,</span>
+<span id="cb57-8"><a href="#cb57-8" aria-hidden="true" tabindex="-1"></a>                          f_derivatives <span class="op">=</span> [y_der_2, y_der_3],</span>
+<span id="cb57-9"><a href="#cb57-9" aria-hidden="true" tabindex="-1"></a>                          y_t0 <span class="op">=</span> y_init, N <span class="op">=</span> <span class="dv">4</span>)</span>
+<span id="cb57-10"><a href="#cb57-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb57-11"><a href="#cb57-11" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"El valor de h es: </span><span class="sc">{</span>h<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb57-12"><a href="#cb57-12" aria-hidden="true" tabindex="-1"></a>graphics(ts4d, ys4d)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>El valor de h es: 0.25</code></pre>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="Deber12_Leandro_Bravo_files/figure-html/cell-30-output-2.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<section id="link-del-repositorio" class="level2">
+<h2 class="anchored" data-anchor-id="link-del-repositorio">Link del repositorio:</h2>
+<p>https://github.com/ElAlfa3007/M-todos_Num-ricos.git</p>
+</section>
+</section>
+
+</main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
